@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashoka Properties | Property Dealer in Sonipat & Jindal Global City</title>
+<meta name="description" content="Ashoka Properties – Your Trust is our Identity. Trusted property consultant in Sonipat & Jindal Global City for flats, plots, sale, purchase and renting. A unit of Ashokaa Smart LLP.">
+<meta name="theme-color" content="#111318">
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body class="loading">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7H5a2 2 0 0 1 0-4h13v4"/><path d="M3 5v14a2 2 0 0 0 2 2h15V7"/><circle cx="16" cy="14" r="1.5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+</svg>
+
+<!-- PRELOADER -->
+<div class="loader" id="loader">
+  <div class="mid"><img src="images/logo-mark-white.png" alt=""><div class="tag">Your Trust is our Identity</div></div>
+  <div class="num" id="loadNum">0</div>
+  <div class="bar" id="loadBar"></div>
+</div>
+
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"><span>View</span></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap bar">
+    <a href="#top" class="brand"><img src="images/logo-mark.png" alt=""><span><b>Ashoka Properties</b><small>Your Trust is our Identity</small></span></a>
+    <ul id="menu">
+      <li><a href="#services"><span data-t="Services">Services</span></a></li>
+      <li><a href="#about"><span data-t="About">About</span></a></li>
+      <li><a href="#areas"><span data-t="Locations">Locations</span></a></li>
+      <li><a href="#gallery"><span data-t="Gallery">Gallery</span></a></li>
+      <li><a href="#contact"><span data-t="Contact">Contact</span></a></li>
+    </ul>
+    <a href="tel:+919350974852" class="btn btn-dark magnetic"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> 93509 74852</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO: live 3D villa -->
+<section class="hero" id="top">
+  <div class="hero-fallback"></div>
+  <canvas id="scene" aria-label="3D model of a modern villa"></canvas>
+  <div class="wrap hero-copy" id="heroCopy">
+    <span class="eyebrow hero-in"><img src="images/logo-mark.png" alt=""> Trusted property consultant · Sonipat</span>
+    <h1 class="split" id="heroTitle">Find Your <span class="serif">Dream</span> Property</h1>
+    <p class="sub hero-in"><b>Flats &amp; plots</b> in Sonipat and Jindal Global City. We help you <b>buy, sell or rent</b> — honestly, from the first visit to the final deal.</p>
+    <div class="picker hero-in">
+      <span>I want to</span>
+      <a href="#enquiry" data-svc="Purchase">Buy</a>
+      <a href="#enquiry" data-svc="Sale">Sell</a>
+      <a href="#enquiry" data-svc="Renting">Rent</a>
+      <a href="#enquiry" data-svc="Flat">Flat</a>
+      <a href="#enquiry" data-svc="Plot">Plot</a>
+      <a href="#enquiry" class="cta">Talk to us →</a>
+    </div>
+  </div>
+  <div class="wrap hero-foot">
+    <div class="chip hero-in"><i><svg class="i"><use href="#i-home"/></svg></i><div><strong>Flats &amp; Plots</strong><span>Prime locations</span></div></div>
+    <div class="scroll-hint hero-in"><span class="mouse"></span>Scroll to explore</div>
+    <div class="chip hero-in"><i><svg class="i"><use href="#i-shield"/></svg></i><div><strong>100% Transparent</strong><span>No hidden surprises</span></div></div>
+  </div>
+</section>
+
+<div class="marquee"><div class="track" id="marquee">
+  <span>Your Trust is our <em>Identity</em></span><span>Property Sale</span><span>Property Purchase</span><span>Renting</span><span>Flats</span><span>Residential &amp; Commercial Plots</span><span>Jindal Global City</span><span>Sonipat</span>
+  <span>Your Trust is our <em>Identity</em></span><span>Property Sale</span><span>Property Purchase</span><span>Renting</span><span>Flats</span><span>Residential &amp; Commercial Plots</span><span>Jindal Global City</span><span>Sonipat</span>
+</div></div>
+
+<!-- STATEMENT -->
+<section class="statement pad">
+  <div class="wrap">
+    <span class="kicker" data-r="up">Who we are</span>
+    <p id="statement" style="margin-top:26px">We help families and investors <span class="serif">buy, sell and rent</span> property in Sonipat and Jindal Global City — with honest advice, clear paperwork and support at every single step.</p>
+    <div class="sig" data-r="up"><img src="images/logo-mark.png" alt=""><div><b>Ashoka Properties</b><span>A unit of Ashokaa Smart LLP</span></div></div>
+  </div>
+</section>
+
+<!-- SERVICES: horizontal 3D scroll -->
+<section class="hs" id="services">
+  <div class="wrap head">
+    <div><span class="kicker" data-r="up">Our Services</span><h2 data-r="up">Everything you need,<br><span class="serif">under one roof</span></h2></div>
+    <p class="lead" data-r="up">Reliable and professional real estate services for buying, selling and renting in Sonipat and Jindal Global City.</p>
+  </div>
+  <div class="hs-track" id="hsTrack">
+    <a href="#enquiry" data-svc="Sale" class="card" data-cursor="Sell"><img src="images/sale.jpg" alt="Modern white villa with pool"><span class="num">01</span><span class="go">→</span><div class="in"><h3>Sell Your Property</h3><p>Sell your residential or commercial property with professional guidance and the right buyers.</p><span class="more">Get a buyer</span></div></a>
+    <a href="#enquiry" data-svc="Purchase" class="card" data-cursor="Buy"><img src="images/buy.jpg" alt="House keys with a small model home"><span class="num">02</span><span class="go">→</span><div class="in"><h3>Buy a Property</h3><p>Find the right property for your requirements, location and budget with trusted assistance.</p><span class="more">Find my property</span></div></a>
+    <a href="#enquiry" data-svc="Renting" class="card" data-cursor="Rent"><img src="images/rent.jpg" alt="Bright modern living room"><span class="num">03</span><span class="go">→</span><div class="in"><h3>Rent a Property</h3><p>Get suitable rental homes and reliable tenants with our professional assistance.</p><span class="more">Explore rentals</span></div></a>
+    <a href="#enquiry" data-svc="Flat" class="card" data-cursor="Flats"><img src="images/flats.jpg" alt="Modern apartment building"><span class="num">04</span><span class="go">→</span><div class="in"><h3>Flats</h3><p>Residential flats in prime locations, suitable for families and investors.</p><span class="more">View flats</span></div></a>
+    <a href="#enquiry" data-svc="Plot" class="card" data-cursor="Plots"><img src="images/plots.jpg" alt="Open land at sunset"><span class="num">05</span><span class="go">→</span><div class="in"><h3>Plots</h3><p>Residential and commercial plots in promising locations for your future investment.</p><span class="more">View plots</span></div></a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker" data-r="up">Why Ashoka Properties</span><h2 data-r="up">Property made <span class="serif">simple</span></h2></div>
+      <p class="lead" data-r="up">Buying, selling or renting is a big decision. We stay with you at every step so it feels easy and safe.</p>
+    </div>
+    <div class="why" id="whyGrid">
+      <div><span class="n">01</span><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><h3>Honest &amp; transparent</h3><p>Clear information and fair dealing — trust is what our name stands for.</p></div>
+      <div><span class="n">02</span><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><h3>Local experts</h3><p>Our office is in Jindal Global City, so we know Sonipat and its properties closely.</p></div>
+      <div><span class="n">03</span><span class="ic"><svg class="i"><use href="#i-doc"/></svg></span><h3>Paperwork handled</h3><p>Help with negotiation, documentation and every step of the transaction.</p></div>
+      <div><span class="n">04</span><span class="ic"><svg class="i"><use href="#i-wallet"/></svg></span><h3>For every budget</h3><p>Flats and plots chosen around your location, budget and needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding-bottom:clamp(90px,11vw,150px)">
+  <div class="wrap about">
+    <div class="about-media">
+      <div class="m1" data-r="clip"><img src="images/villa-dusk.jpg" alt="Modern villa at dusk" data-parallax></div>
+      <div class="m2" id="logoCard"><img src="images/logo-full.png" alt="Ashoka Properties logo – Your Trust is our Identity"></div>
+      <div class="badge" data-r="up"><b>Sale · Purchase · Rent</b>All under one roof</div>
+    </div>
+    <div>
+      <span class="kicker" data-r="up">About Us</span>
+      <h2 data-r="up">Welcome to<br><span class="serif">Ashoka Properties</span></h2>
+      <p class="lead" data-r="up">Ashoka Properties, a unit of <b>Ashokaa Smart LLP</b>, is a trusted property consultancy in Sonipat and Jindal Global City. We help clients with property sale, purchase and renting, with reliable guidance throughout the process.</p>
+      <p class="quote" data-r="up">“Your Trust is our Identity.”</p>
+      <ul class="checks" data-r="up">
+        <li>Trusted Property Consultancy</li>
+        <li>Sale, Purchase &amp; Renting</li>
+        <li>Flats &amp; Plots in Prime Locations</li>
+        <li>Professional &amp; Reliable Guidance</li>
+      </ul>
+      <div class="call" data-r="up">
+        <a href="#contact" class="btn btn-dark magnetic">Visit Our Office <span class="arr">→</span></a>
+        <a href="tel:+919350974852" class="ph"><i><svg class="i"><use href="#i-phone"/></svg></i><div><small>Call us anytime</small><b>+91 93509 74852</b></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process pad" id="process">
+  <div class="wrap pgrid">
+    <div class="sticky">
+      <span class="kicker" data-r="up">How it works</span>
+      <h2 data-r="up">3 easy steps to <span class="serif">your property</span></h2>
+      <p class="lead" data-r="up">Simple, transparent and hassle-free — from the first conversation to the final deal.</p>
+      <img src="images/logo-mark-white.png" alt="">
+    </div>
+    <div class="steps" id="steps">
+      <div class="rail"><i id="rail"></i></div>
+      <div class="step" data-r="up"><div class="n">01</div><h3>Tell us what you need</h3><p>Share your requirement, preferred location and budget. We understand your needs and suggest suitable options.</p></div>
+      <div class="step" data-r="up"><div class="n">02</div><h3>Visit &amp; choose</h3><p>See flats, plots and other properties in Sonipat and Jindal Global City that match your requirements.</p></div>
+      <div class="step" data-r="up"><div class="n">03</div><h3>Close the deal</h3><p>We assist with negotiation, documentation and the full transaction for a smooth, worry-free experience.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="pad" id="areas">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker" data-r="up">Where we work</span><h2 data-r="up">Locations we <span class="serif">know best</span></h2></div></div>
+    <div class="areas">
+      <a href="#enquiry" class="area" data-r="clip" data-cursor="Enquire"><div class="im"><img src="images/villa-3.jpg" alt="" data-parallax></div><div><small>Our home base</small><h3>Jindal Global City</h3><p>Our office is right here in A-Block, Sector 35 — flats, plots and rentals in and around Jindal Global City.</p><span class="pill"><svg class="i" style="width:16px;height:16px"><use href="#i-pin"/></svg> SCO-64, A-Block</span></div></a>
+      <a href="#enquiry" class="area" data-r="clip" data-cursor="Enquire"><div class="im"><img src="images/city.jpg" alt="" data-parallax></div><div><small>Across the city</small><h3>Sonipat</h3><p>Residential and commercial properties across Sonipat for families, investors and businesses.</p><span class="pill"><svg class="i" style="width:16px;height:16px"><use href="#i-home"/></svg> Homes · Plots · Shops</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 3D GALLERY WALL -->
+<section class="wall" id="gallery">
+  <div class="wrap head"><span class="kicker" data-r="up">Gallery</span><h2 data-r="up">Spaces you'll <span class="serif">love</span></h2></div>
+  <div class="wall-grid" id="wall">
+    <figure data-cursor="View"><img loading="lazy" src="images/pool-villa.jpg" alt="Villa with pool"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/interior.jpg" alt="Living room"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/stairs.jpg" alt="Staircase"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/villa-2.jpg" alt="Modern house"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/bath.jpg" alt="Bathroom"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/about.jpg" alt="Modern facade"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/chair.jpg" alt="Interior detail"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/view.jpg" alt="Interior with view"></figure>
+    <figure data-cursor="View"><img loading="lazy" src="images/rent.jpg" alt="Living space"></figure>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad" id="reviews" style="padding-top:0">
+  <div class="wrap head"><div><span class="kicker" data-r="up">Client Reviews</span><h2 data-r="up">What our <span class="serif">clients say</span></h2></div></div>
+  <div class="revs" id="revs"></div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry" style="padding-bottom:clamp(90px,11vw,150px)">
+  <div class="wrap">
+    <div class="enq" data-r="up">
+      <div class="enq-media">
+        <img src="images/home.jpg" alt="Beautiful family home" data-parallax>
+        <div class="txt"><span class="kicker">Schedule a visit</span><h3>Let's find the right<br>property for you.</h3><p>Fill the form — we reply on WhatsApp.</p></div>
+      </div>
+      <form id="form">
+        <h3>Send an enquiry</h3>
+        <p class="note">Takes 30 seconds. It opens WhatsApp with your message ready to send.</p>
+        <div class="field"><label for="name">Your name</label><input id="name" required placeholder="Full name" autocomplete="name"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" required placeholder="+91" autocomplete="tel"></div>
+        <div class="field full"><label>I'm interested in</label>
+          <div class="chips">
+            <input type="radio" name="svc" id="s1" value="Purchase" checked><label for="s1">Buy</label>
+            <input type="radio" name="svc" id="s2" value="Sale"><label for="s2">Sell</label>
+            <input type="radio" name="svc" id="s3" value="Renting"><label for="s3">Rent</label>
+            <input type="radio" name="svc" id="s4" value="Flat"><label for="s4">Flat</label>
+            <input type="radio" name="svc" id="s5" value="Plot"><label for="s5">Plot</label>
+            <input type="radio" name="svc" id="s6" value="Commercial Property"><label for="s6">Commercial</label>
+          </div>
+        </div>
+        <div class="field full"><label for="msg">Message (optional)</label><textarea id="msg" placeholder="Preferred location, budget, timeline…"></textarea></div>
+        <button class="btn btn-wa" type="submit">Send on WhatsApp <span class="arr">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="head"><div><span class="kicker" data-r="up">Get in touch</span><h2 data-r="up">Visit our <span class="serif">office</span></h2></div></div>
+    <div class="contact">
+      <div style="display:grid;gap:20px">
+        <div class="cbox" data-r="up"><h3>Office Address</h3><address>SCO - 64, A-Block,<br>Jindal Global City,<br>Sec. 35, Sonipat - 131001</address>
+          <a class="btn btn-dark magnetic" style="margin-top:20px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=AshokaA+PROPERTIES+Jindal+Global+City+Sonipat">Get Directions <span class="arr">→</span></a></div>
+        <div class="cbox" data-r="up"><h3>Call Us</h3>
+          <div class="phones">
+            <a href="tel:+919350974852"><svg class="i"><use href="#i-phone"/></svg>+91 93509 74852</a><a href="tel:+919311182344"><svg class="i"><use href="#i-phone"/></svg>+91 93111 82344</a>
+            <a href="tel:+919910092536"><svg class="i"><use href="#i-phone"/></svg>+91 99100 92536</a><a href="tel:+919266159111"><svg class="i"><use href="#i-phone"/></svg>+91 92661 59111</a>
+          </div>
+        </div>
+      </div>
+      <div class="map" data-r="clip"><iframe loading="lazy" title="Ashoka Properties location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3492.9941037374883!2d77.11765749999999!3d28.898523299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dad0030292dc5%3A0x63e5742753713077!2sAshokaA%20PROPERTIES!5e0!3m2!1sen!2sin!4v1786701583263!5m2!1sen!2sin"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wrap" style="margin-top:clamp(90px,10vw,140px)">
+  <div class="cta-band" data-r="up">
+    <img class="mk" id="ctaMark" src="images/logo-mark-white.png" alt="">
+    <div><h2>Ready to find your <span class="serif">property?</span></h2><p>Call or WhatsApp us today — we're happy to help.</p></div>
+    <div class="acts">
+      <a href="tel:+919350974852" class="btn btn-dark magnetic"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> Call Now</a>
+      <a href="https://wa.me/919350974852" target="_blank" rel="noopener" class="btn btn-wa magnetic">WhatsApp Us <span class="arr">→</span></a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="flogo"><img src="images/logo-mark-white.png" alt=""><div><b>Ashoka Properties</b><small>Your Trust is our Identity</small></div></div>
+        <p style="margin-top:20px">A trusted real estate consultancy for buying, selling and renting residential and commercial properties.</p>
+        <p style="margin-top:10px;color:#fff;font-weight:600">A Unit of Ashokaa Smart LLP</p>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="#top">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#areas">Locations</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+      <div><h4>Our Services</h4><ul><li><a href="#services">Property Sale</a></li><li><a href="#services">Property Purchase</a></li><li><a href="#services">Property Renting</a></li><li><a href="#services">Flats</a></li><li><a href="#services">Plots</a></li></ul></div>
+      <div><h4>Get In Touch</h4><p>SCO - 64, A-Block, Jindal Global City, Sec. 35, Sonipat - 131001</p>
+        <ul style="margin-top:12px"><li><a href="tel:+919350974852">+91 93509 74852</a></li><li><a href="tel:+919311182344">+91 93111 82344</a></li><li><a href="tel:+919910092536">+91 99100 92536</a></li><li><a href="tel:+919266159111">+91 92661 59111</a></li></ul></div>
+    </div>
+    <div class="fbig" id="fbig">ASHOKA</div>
+    <div class="fbot"><span>© 2026 Ashoka Properties. All rights reserved.</span><span>Your Trust is our Identity</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/919350974852" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.3 3.7C18.1 1.3 15.1 0 12 0 5.5 0 .2 5.3.2 11.8c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.6-8.2z"/></svg>
+</a>
+<div class="mbar">
+  <a href="tel:+919350974852" class="btn btn-dark"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> Call</a>
+  <a href="https://wa.me/919350974852" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
