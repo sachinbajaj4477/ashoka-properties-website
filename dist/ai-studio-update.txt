@@ -1,0 +1,975 @@
+Replace the ENTIRE contents of index.html with EXACTLY the code below, copied character for character.
+Do not use React or TypeScript, do not split it into files, do not rewrite, shorten or "improve" anything. Delete any other files you created (index.tsx, App.tsx, components, etc.) so index.html is the only file.
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashoka Properties | Property Dealer in Sonipat & Jindal Global City</title>
+<meta name="description" content="Ashoka Properties – Your Trust is our Identity. Trusted property consultant in Sonipat & Jindal Global City for flats, plots, sale, purchase and renting. A unit of Ashokaa Smart LLP.">
+<meta name="theme-color" content="#111318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink:#111318; --ink-2:#2a2d35; --muted:#5f6470; --line:#e7e2d8;
+--bg:#f7f5f0; --card:#fff; --stone:#efebe3;
+--blue:#2f80d1; --blue-2:#6db0f0; --blue-soft:#e7f1fb; --deep:#123a66;
+--sky-1:#3d8fe0; --sky-2:#86c0f4; --sky-3:#d6e9fb;
+--radius:24px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+html{overflow-x:hidden;overflow-x:clip}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+main,footer,section{max-width:100%;overflow-x:clip}
+body.loading{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+.serif{font-family:'Playfair Display',serif;font-style:italic;font-weight:500}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
+h2{font-size:clamp(34px,5vw,68px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin-top:14px;text-wrap:balance}
+h1,h3{text-wrap:balance}
+h2 .serif{color:var(--deep);letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:17px;line-height:1.7;max-width:540px;margin-top:18px}
+section{position:relative}
+.pad{padding:clamp(90px,11vw,150px) 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
+.split .c{display:inline-block;transform-origin:50% 100%;will-change:transform}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:14px;border:0;cursor:pointer;white-space:nowrap;transition:background .25s,box-shadow .25s;position:relative}
+.btn-dark{background:var(--ink);color:#fff;box-shadow:0 12px 28px rgba(17,19,24,.22)}
+.btn-dark:hover{background:#000}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(47,128,209,.35)}
+.btn-blue:hover{background:#226fbd}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-wa{background:#25d366;color:#fff;box-shadow:0 12px 28px rgba(37,211,102,.3)}
+.btn-wa:hover{background:#1fbd5a}
+.btn .arr{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);transition:transform .3s}
+.btn:hover .arr{transform:translateX(3px) rotate(-45deg)}
+.loader{position:fixed;inset:0;z-index:200;background:var(--ink);color:#fff;display:grid;place-items:center}
+.loader .mid{display:flex;flex-direction:column;align-items:center;gap:22px}
+.loader img{width:110px;opacity:0;transform:scale(.6) rotateY(90deg)}
+.loader .tag{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#9aa0ad;opacity:0}
+.loader .num{position:absolute;right:5vw;bottom:5vh;font-size:clamp(60px,12vw,160px);font-weight:800;letter-spacing:-.06em;line-height:1;color:rgba(255,255,255,.1)}
+.loader .bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left}
+.cursor,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:150;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+body.has-cursor .cursor,body.has-cursor .cursor-ring{opacity:1}
+.cursor{width:8px;height:8px;background:var(--ink);mix-blend-mode:difference;background:#fff}
+.cursor-ring{width:40px;height:40px;border:1.5px solid rgba(17,19,24,.35);display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;transition:width .35s var(--ease),height .35s var(--ease),background .35s,border-color .35s}
+.cursor-ring.big{width:92px;height:92px;background:var(--ink);border-color:var(--ink)}
+.cursor-ring span{opacity:0;transition:opacity .2s}
+.cursor-ring.big span{opacity:1}
+@media (hover:none){.cursor,.cursor-ring{display:none}}
+.nav{position:fixed;inset:16px 0 auto;z-index:100;transition:transform .5s var(--ease)}
+.nav.hide{transform:translateY(-130%)}
+.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:8px 10px 8px 14px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 34px rgba(17,19,24,.08)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{height:40px;width:auto}
+.brand b{display:block;font-size:16px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.nav ul{display:flex;gap:30px;list-style:none;font-size:14px;font-weight:600;color:var(--ink-2)}
+.nav ul a{position:relative;display:inline-block;overflow:hidden;height:1.3em;line-height:1.3em}
+.nav ul a span{display:block;transition:transform .45s var(--ease)}
+.nav ul a span::after{content:attr(data-t);display:block;color:var(--blue)}
+.nav ul a:hover span{transform:translateY(-100%)}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--ink);cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:#fff;margin:4px auto;transition:.3s}
+.hero{height:100vh;height:100svh;min-height:640px;overflow:hidden;background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 42%,var(--sky-3) 78%,#e9f1f8 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-fallback{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80&auto=format&fit=crop) center/cover;display:none}
+.no-webgl .hero-fallback{display:block}
+.no-webgl .hero-fallback::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.1) 60%)}
+.hero-copy{position:relative;z-index:3;text-align:center;padding-top:clamp(118px,15vh,160px);pointer-events:none}
+.hero-copy > *{pointer-events:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);font-size:13px;font-weight:600;color:var(--ink-2)}
+.eyebrow img{height:26px;width:26px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+.hero h1{margin-top:20px;font-size:clamp(44px,8vw,118px);line-height:.95;letter-spacing:-.05em;font-weight:800;color:var(--ink);perspective:800px}
+.hero h1 .serif{color:var(--deep);letter-spacing:-.02em}
+.hero p.sub{margin:20px auto 0;max-width:560px;font-size:clamp(15px,1.4vw,18px);color:#203450;line-height:1.6}
+.hero p.sub b{color:var(--ink)}
+.picker{margin:26px auto 0;display:inline-flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border:1px solid #fff;box-shadow:0 18px 44px rgba(17,19,24,.14);flex-wrap:wrap;justify-content:center}
+.picker > span{font-size:13px;font-weight:700;color:var(--muted);padding:0 10px 0 14px}
+.picker a{padding:11px 18px;border-radius:999px;font-weight:700;font-size:14px;color:var(--ink);transition:background .2s,color .2s}
+.picker a:hover{background:var(--ink);color:#fff}
+.picker a.cta{background:var(--blue);color:#fff}
+.picker a.cta:hover{background:#226fbd}
+.hero-foot{position:absolute;z-index:3;left:0;right:0;bottom:28px;display:flex;justify-content:space-between;align-items:end}
+.chip{display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;border-radius:18px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border:1px solid #fff;box-shadow:0 14px 40px rgba(17,19,24,.14);font-size:13px}
+.chip i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--ink);color:#fff}
+.chip strong{display:block;font-size:15px}
+.chip span{color:var(--muted)}
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.scroll-hint .mouse{width:24px;height:38px;border:2px solid var(--ink-2);border-radius:14px;position:relative}
+.scroll-hint .mouse::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;border-radius:2px;background:var(--ink-2);transform:translateX(-50%);animation:wheel 1.6s infinite}
+@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:22px 0;position:relative;z-index:5}
+.marquee .track{display:flex;width:max-content;will-change:transform}
+.marquee .track span{display:flex;align-items:center;gap:40px;padding-right:40px;white-space:nowrap;font-size:clamp(18px,2.2vw,28px);font-weight:700;letter-spacing:-.01em}
+.marquee .track span em{font-family:'Playfair Display',serif;font-weight:500;color:var(--blue-2)}
+.marquee .track span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue-2)}
+.statement p{font-size:clamp(28px,4.4vw,62px);line-height:1.15;letter-spacing:-.035em;font-weight:700;max-width:1100px}
+.statement p .wd{opacity:.13;transition:none}
+.statement p .serif{color:var(--deep)}
+.statement .sig{display:flex;align-items:center;gap:14px;margin-top:40px}
+.statement .sig img{height:56px}
+.statement .sig b{display:block;font-size:17px}
+.statement .sig span{color:var(--muted);font-size:14px}
+.hs{overflow:hidden;background:var(--stone)}
+.hs .head{padding-top:clamp(90px,10vw,130px);margin-bottom:40px}
+.hs-track{display:flex;gap:28px;padding:0 max(24px,calc((100vw - 1240px)/2)) clamp(90px,10vw,130px);width:max-content;perspective:1400px}
+.card{position:relative;width:min(440px,78vw);height:min(560px,68vh);border-radius:28px;overflow:hidden;color:#fff;isolation:isolate;flex:none;transform-style:preserve-3d;will-change:transform;box-shadow:0 40px 80px rgba(17,19,24,.18)}
+.card img{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.card:hover img{transform:scale(1.06)}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,19,24,.05) 30%,rgba(17,19,24,.88) 100%)}
+.card .num{position:absolute;top:24px;left:26px;font-size:13px;font-weight:800;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px)}
+.card .go{position:absolute;top:20px;right:20px;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:20px;transition:.45s var(--ease);transform:rotate(-45deg)}
+.card:hover .go{transform:rotate(0);background:var(--blue);color:#fff}
+.card .in{position:absolute;inset:auto 0 0;padding:30px}
+.card h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:-.03em;font-weight:800}
+.card p{font-size:15px;line-height:1.6;opacity:.88;margin-top:10px}
+.card .more{display:inline-flex;margin-top:18px;font-size:13px;font-weight:800;padding:9px 15px;border-radius:999px;background:#fff;color:var(--ink)}
+.card.intro{background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:34px}
+.card.intro::before{display:none}
+.card.intro h3{font-size:clamp(30px,3vw,40px);line-height:1.08}
+.card.intro p{color:#b5bac6;opacity:1}
+.card.intro img.mk{position:static;width:90px;height:auto;inset:auto;z-index:0}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;perspective:1200px}
+.why > div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px 34px;transform-origin:50% 0;transition:box-shadow .4s,translate .4s var(--ease)}
+.why > div:hover{box-shadow:0 30px 60px rgba(17,19,24,.1);translate:0 -6px}
+.why .ic{width:56px;height:56px;border-radius:18px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin-bottom:24px}
+.why .n{float:right;font-size:13px;font-weight:800;color:#c4c0b6}
+.why h3{font-size:19px;letter-spacing:-.01em}
+.why p{color:var(--muted);font-size:14.5px;line-height:1.6;margin-top:8px}
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.about-media{position:relative;aspect-ratio:1/1.1;perspective:1200px}
+.about-media .m1{position:absolute;inset:0 16% 12% 0;border-radius:30px;overflow:hidden}
+.about-media .m1 img{width:100%;height:120%;object-fit:cover;margin-top:-10%}
+.about-media .m2{position:absolute;width:46%;aspect-ratio:1;right:0;bottom:0;border-radius:26px;background:#fff;border:8px solid var(--bg);box-shadow:0 40px 80px rgba(17,19,24,.18);display:grid;place-items:center;padding:12%;transform-style:preserve-3d;will-change:transform}
+.about-media .m2 img{width:100%;transform:translateZ(40px)}
+.about-media .badge{position:absolute;left:-12px;top:12%;background:var(--ink);color:#fff;padding:18px 22px;border-radius:20px;box-shadow:0 20px 40px rgba(17,19,24,.3);font-size:13px;color:#c9cdd6}
+.about-media .badge b{display:block;color:#fff;font-size:22px;letter-spacing:-.02em}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 34px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-weight:600;font-size:15px;line-height:1.4}
+.checks li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:13px;font-weight:800}
+.quote{margin-top:22px;padding:16px 20px;border-left:3px solid var(--blue);background:var(--card);border-radius:0 14px 14px 0;font-weight:700;font-size:18px}
+.call{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.call .ph{display:flex;align-items:center;gap:12px}
+.call .ph i{width:50px;height:50px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center}
+.call .ph small{display:block;color:var(--muted);font-size:12px}
+.call .ph b{font-size:18px}
+.process{background:var(--ink);color:#fff;border-radius:44px;margin:0 clamp(10px,2vw,24px);overflow:hidden}
+.process::before{content:"";position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(109,176,240,.2),transparent 65%);top:-340px;right:-240px}
+.process .kicker{color:var(--blue-2)}
+.process h2 .serif{color:var(--blue-2)}
+.process .lead{color:#a9afbd}
+.pgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,100px);position:relative}
+.pgrid .sticky{position:sticky;top:140px;align-self:start}
+.pgrid .sticky img{width:min(260px,60%);opacity:.08;margin-top:50px}
+.steps{position:relative;display:grid;gap:22px;padding-left:40px}
+.steps .rail{position:absolute;left:8px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.1)}
+.steps .rail i{position:absolute;inset:0;background:linear-gradient(var(--blue-2),var(--blue));transform-origin:top;transform:scaleY(0)}
+.step{position:relative;padding:34px 32px;border-radius:var(--radius);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09)}
+.step::before{content:"";position:absolute;left:-39px;top:42px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--blue-2)}
+.step .n{font-size:72px;font-weight:800;letter-spacing:-.05em;background:linear-gradient(180deg,var(--blue-2),rgba(109,176,240,.08));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.step h3{font-size:24px;margin:20px 0 10px;letter-spacing:-.02em}
+.step p{color:#a9afbd;line-height:1.7;font-size:15.5px}
+.areas{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.area{position:relative;border-radius:32px;overflow:hidden;min-height:520px;color:#fff;isolation:isolate;display:flex;align-items:flex-end;padding:38px}
+.area .im{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.area .im img{width:100%;height:125%;object-fit:cover;margin-top:-12%}
+.area::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,19,24,0) 35%,rgba(17,19,24,.85))}
+.area small{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#bcdcf8}
+.area h3{font-size:clamp(30px,3.4vw,46px);letter-spacing:-.035em;margin:8px 0 10px}
+.area p{opacity:.9;line-height:1.6;max-width:440px;font-size:15.5px}
+.area .pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(10px);font-size:13px;font-weight:700}
+.wall{overflow:hidden;padding:clamp(90px,10vw,140px) 0 clamp(120px,12vw,180px);perspective:1500px;background:linear-gradient(180deg,var(--bg),#ece7dd)}
+.wall .head{text-align:center;justify-content:center;flex-direction:column;align-items:center}
+.wall-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(170px,19vw,270px);gap:16px;width:min(1360px,100% - 32px);margin:0 auto;transform-style:preserve-3d;will-change:transform}
+.wall-grid figure{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(17,19,24,.18);background:#ddd}
+.wall-grid figure:nth-child(1){grid-row:span 2}
+.wall-grid figure:nth-child(4){grid-column:span 2}
+.wall-grid figure:nth-child(6){grid-row:span 2}
+.wall-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.wall-grid figure:hover img{transform:scale(1.07)}
+.revs{display:grid;gap:18px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.revs .row{display:flex;gap:18px;width:max-content;animation:slide 60s linear infinite}
+.revs .row.rev2{animation-direction:reverse;animation-duration:70s}
+.revs:hover .row{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.rev{width:380px;flex:none;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:20px}
+.rev .stars{color:#f2b01e;letter-spacing:3px}
+.rev q{font-size:16.5px;line-height:1.6;quotes:none;color:var(--ink-2);flex:1}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .av{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+.rev .who b{display:block;font-size:15px}
+.rev .who span{font-size:13px;color:var(--muted)}
+.enq{display:grid;grid-template-columns:1fr 1.1fr;border-radius:34px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 40px 90px rgba(17,19,24,.08)}
+.enq-media{position:relative;min-height:560px;display:flex;align-items:flex-end;color:#fff;isolation:isolate;overflow:hidden}
+.enq-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.enq-media::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,19,24,0) 35%,rgba(17,19,24,.85))}
+.enq-media .txt{padding:42px}
+.enq-media .kicker{color:#bcdcf8}
+.enq-media h3{font-size:32px;letter-spacing:-.03em;line-height:1.1;margin-top:12px}
+.enq-media p{color:#dfe3ea;margin-top:8px}
+form{padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:center}
+form h3{grid-column:1/-1;font-size:30px;letter-spacing:-.03em}
+form p.note{grid-column:1/-1;color:var(--muted);font-size:14px;margin-top:-8px;margin-bottom:6px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{font:inherit;font-size:15px;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);outline:none;transition:.2s}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(47,128,209,.14)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{text-transform:none;letter-spacing:0;font-size:14px;font-weight:600;color:var(--ink);padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);cursor:pointer;transition:.2s}
+.chips input:checked + label{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips input:focus-visible + label{outline:2px solid var(--blue);outline-offset:2px}
+form .btn{grid-column:1/-1;justify-content:center;padding:18px;font-size:15px}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+.cbox h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.cbox address{font-style:normal;font-size:20px;font-weight:700;line-height:1.5}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.phones a{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:14px;background:var(--bg);border:1px solid var(--line);font-weight:700;transition:.2s}
+.phones a svg{width:18px;height:18px;color:var(--blue)}
+.phones a:hover{border-color:var(--blue);background:#fff}
+.map{border-radius:var(--radius);overflow:hidden;min-height:440px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;min-height:440px}
+.cta-band{position:relative;overflow:hidden;border-radius:40px;padding:clamp(48px,7vw,96px);background:linear-gradient(135deg,var(--sky-1),var(--sky-2) 60%,var(--sky-3));display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
+.cta-band .mk{position:absolute;width:380px;right:-50px;bottom:-80px;opacity:.28;will-change:transform}
+.cta-band h2{margin:0}
+.cta-band p{color:#1d3350;margin-top:12px;font-size:17px}
+.cta-band .acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;position:relative;z-index:1}
+footer{background:var(--ink);color:#b8bdc9;padding:90px 0 30px;margin-top:90px;overflow:hidden}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.flogo{display:flex;align-items:center;gap:14px}
+.flogo img{height:64px}
+.flogo b{color:#fff;font-size:20px;display:block}
+.flogo small{font-size:13px;color:var(--blue-2);font-weight:600}
+footer h4{color:#fff;font-size:15px;margin-bottom:18px}
+footer ul{list-style:none;display:grid;gap:10px;font-size:14.5px}
+footer ul a:hover{color:#fff}
+footer p{font-size:14.5px;line-height:1.7}
+.fbig{display:flex;justify-content:center;margin-top:70px;font-size:clamp(64px,17vw,250px);font-weight:800;letter-spacing:-.06em;line-height:.85;color:#fff;user-select:none;overflow:hidden}
+.fbig span{display:inline-block;opacity:.1}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;margin-top:30px;font-size:13px;color:#8a909e}
+.wa{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.45)}
+.wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ping 2s infinite}
+@keyframes ping{to{transform:scale(1.6);opacity:0}}
+.mbar{display:none}
+@media (max-width:980px){
+.nav ul,.nav .bar > .btn{display:none}
+.burger{display:block}
+.nav.open ul{display:flex;position:absolute;top:72px;left:24px;right:24px;flex-direction:column;gap:0;background:#fff;border-radius:22px;padding:10px;box-shadow:0 20px 50px rgba(17,19,24,.18)}
+.nav.open ul a{display:block;height:auto;padding:14px 16px;font-size:16px}
+.nav.open ul a span::after{display:none}
+.nav.open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.why{grid-template-columns:1fr 1fr}
+.about,.enq,.contact,.areas,.cta-band,.pgrid{grid-template-columns:1fr}
+.pgrid .sticky{position:static}
+.pgrid .sticky img{display:none}
+.cta-band .acts{justify-content:flex-start}
+.fgrid{grid-template-columns:1fr 1fr}
+.hero-foot .chip{display:none}
+.hero-foot{justify-content:center}
+.area{min-height:420px}
+.wall-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+.wrap{width:calc(100% - 32px)}
+.brand img{height:34px}
+.brand b{font-size:14px}
+.hero{min-height:600px}
+.hero-copy{padding-top:104px}
+.hero h1{margin-top:14px}
+.hero p.sub{font-size:14.5px;margin-top:14px}
+.picker{border-radius:22px;padding:6px;gap:2px;margin-top:18px}
+.picker > span{display:none}
+.picker a{padding:9px 12px;font-size:13px}
+.hero-foot{display:none}
+.hs-track{flex-direction:column;width:auto;padding:0 16px 90px}
+.card{width:100%;height:440px}
+.why{grid-template-columns:1fr}
+.checks{grid-template-columns:1fr}
+form{grid-template-columns:1fr}
+.wall-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+.wall-grid figure:nth-child(4){grid-column:span 2}
+.phones{grid-template-columns:1fr}
+.fgrid{grid-template-columns:1fr}
+.steps{padding-left:30px}
+.step{padding:28px 24px}
+.step::before{left:-29px}
+.rev{width:300px}
+.area{padding:28px;min-height:380px}
+.about-media .badge{left:12px;top:12px;padding:12px 16px;border-radius:16px}
+.about-media .badge b{font-size:16px}
+.about-media .m2{width:44%;padding:7%;border-width:6px}
+.enq-media{min-height:420px}
+.enq-media .txt{padding:28px}
+.enq-media h3{font-size:27px}
+.enq-media h3 br{display:none}
+.wa{display:none}
+.mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:90;padding:8px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 14px 40px rgba(17,19,24,.2)}
+.mbar .btn{justify-content:center;padding:14px}
+footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.statement p .wd{opacity:1}
+}
+</style>
+<script type="importmap">
+{ "imports": {
+"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body class="loading">
+<script>window.LOGOS={"mark":"data:image/png;base64,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"};document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll("img[data-logo]").forEach(i=>i.src=LOGOS[i.dataset.logo]));</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 7H5a2 2 0 0 1 0-4h13v4"/><path d="M3 5v14a2 2 0 0 0 2 2h15V7"/><circle cx="16" cy="14" r="1.5"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+</svg>
+<!-- PRELOADER -->
+<div class="loader" id="loader">
+<div class="mid"><img data-logo="mark" style="filter:invert(1)" alt=""><div class="tag">Your Trust is our Identity</div></div>
+<div class="num" id="loadNum">0</div>
+<div class="bar" id="loadBar"></div>
+</div>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"><span>View</span></div>
+<!-- NAV -->
+<header class="nav" id="nav">
+<div class="wrap bar">
+<a href="#top" class="brand"><img data-logo="mark" alt=""><span><b>Ashoka Properties</b><small>Your Trust is our Identity</small></span></a>
+<ul id="menu">
+<li><a href="#services"><span data-t="Services">Services</span></a></li>
+<li><a href="#about"><span data-t="About">About</span></a></li>
+<li><a href="#areas"><span data-t="Locations">Locations</span></a></li>
+<li><a href="#gallery"><span data-t="Gallery">Gallery</span></a></li>
+<li><a href="#contact"><span data-t="Contact">Contact</span></a></li>
+</ul>
+<a href="tel:+919350974852" class="btn btn-dark magnetic"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> 93509 74852</a>
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</header>
+<main>
+<!-- HERO: live 3D villa -->
+<section class="hero" id="top">
+<div class="hero-fallback"></div>
+<canvas id="scene" aria-label="3D model of a modern villa"></canvas>
+<div class="wrap hero-copy" id="heroCopy">
+<span class="eyebrow hero-in"><img data-logo="mark" alt=""> Trusted property consultant · Sonipat</span>
+<h1 class="split" id="heroTitle">Find Your <span class="serif">Dream</span> Property</h1>
+<p class="sub hero-in"><b>Flats &amp; plots</b> in Sonipat and Jindal Global City. We help you <b>buy, sell or rent</b> — honestly, from the first visit to the final deal.</p>
+<div class="picker hero-in">
+<span>I want to</span>
+<a href="#enquiry" data-svc="Purchase">Buy</a>
+<a href="#enquiry" data-svc="Sale">Sell</a>
+<a href="#enquiry" data-svc="Renting">Rent</a>
+<a href="#enquiry" data-svc="Flat">Flat</a>
+<a href="#enquiry" data-svc="Plot">Plot</a>
+<a href="#enquiry" class="cta">Talk to us →</a>
+</div>
+</div>
+<div class="wrap hero-foot">
+<div class="chip hero-in"><i><svg class="i"><use href="#i-home"/></svg></i><div><strong>Flats &amp; Plots</strong><span>Prime locations</span></div></div>
+<div class="scroll-hint hero-in"><span class="mouse"></span>Scroll to explore</div>
+<div class="chip hero-in"><i><svg class="i"><use href="#i-shield"/></svg></i><div><strong>100% Transparent</strong><span>No hidden surprises</span></div></div>
+</div>
+</section>
+<div class="marquee"><div class="track" id="marquee">
+<span>Your Trust is our <em>Identity</em></span><span>Property Sale</span><span>Property Purchase</span><span>Renting</span><span>Flats</span><span>Residential &amp; Commercial Plots</span><span>Jindal Global City</span><span>Sonipat</span>
+<span>Your Trust is our <em>Identity</em></span><span>Property Sale</span><span>Property Purchase</span><span>Renting</span><span>Flats</span><span>Residential &amp; Commercial Plots</span><span>Jindal Global City</span><span>Sonipat</span>
+</div></div>
+<!-- STATEMENT -->
+<section class="statement pad">
+<div class="wrap">
+<span class="kicker" data-r="up">Who we are</span>
+<p id="statement" style="margin-top:26px">We help families and investors <span class="serif">buy, sell and rent</span> property in Sonipat and Jindal Global City — with honest advice, clear paperwork and support at every single step.</p>
+<div class="sig" data-r="up"><img data-logo="mark" alt=""><div><b>Ashoka Properties</b><span>A unit of Ashokaa Smart LLP</span></div></div>
+</div>
+</section>
+<!-- SERVICES: horizontal 3D scroll -->
+<section class="hs" id="services">
+<div class="wrap head">
+<div><span class="kicker" data-r="up">Our Services</span><h2 data-r="up">Everything you need,<br><span class="serif">under one roof</span></h2></div>
+<p class="lead" data-r="up">Reliable and professional real estate services for buying, selling and renting in Sonipat and Jindal Global City.</p>
+</div>
+<div class="hs-track" id="hsTrack">
+<a href="#enquiry" data-svc="Sale" class="card" data-cursor="Sell"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80&auto=format&fit=crop" alt="Modern white villa with pool"><span class="num">01</span><span class="go">→</span><div class="in"><h3>Sell Your Property</h3><p>Sell your residential or commercial property with professional guidance and the right buyers.</p><span class="more">Get a buyer</span></div></a>
+<a href="#enquiry" data-svc="Purchase" class="card" data-cursor="Buy"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format&fit=crop" alt="House keys with a small model home"><span class="num">02</span><span class="go">→</span><div class="in"><h3>Buy a Property</h3><p>Find the right property for your requirements, location and budget with trusted assistance.</p><span class="more">Find my property</span></div></a>
+<a href="#enquiry" data-svc="Renting" class="card" data-cursor="Rent"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop" alt="Bright modern living room"><span class="num">03</span><span class="go">→</span><div class="in"><h3>Rent a Property</h3><p>Get suitable rental homes and reliable tenants with our professional assistance.</p><span class="more">Explore rentals</span></div></a>
+<a href="#enquiry" data-svc="Flat" class="card" data-cursor="Flats"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80&auto=format&fit=crop" alt="Modern apartment building"><span class="num">04</span><span class="go">→</span><div class="in"><h3>Flats</h3><p>Residential flats in prime locations, suitable for families and investors.</p><span class="more">View flats</span></div></a>
+<a href="#enquiry" data-svc="Plot" class="card" data-cursor="Plots"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format&fit=crop" alt="Open land at sunset"><span class="num">05</span><span class="go">→</span><div class="in"><h3>Plots</h3><p>Residential and commercial plots in promising locations for your future investment.</p><span class="more">View plots</span></div></a>
+</div>
+</section>
+<!-- WHY -->
+<section class="pad" id="why">
+<div class="wrap">
+<div class="head">
+<div><span class="kicker" data-r="up">Why Ashoka Properties</span><h2 data-r="up">Property made <span class="serif">simple</span></h2></div>
+<p class="lead" data-r="up">Buying, selling or renting is a big decision. We stay with you at every step so it feels easy and safe.</p>
+</div>
+<div class="why" id="whyGrid">
+<div><span class="n">01</span><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><h3>Honest &amp; transparent</h3><p>Clear information and fair dealing — trust is what our name stands for.</p></div>
+<div><span class="n">02</span><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><h3>Local experts</h3><p>Our office is in Jindal Global City, so we know Sonipat and its properties closely.</p></div>
+<div><span class="n">03</span><span class="ic"><svg class="i"><use href="#i-doc"/></svg></span><h3>Paperwork handled</h3><p>Help with negotiation, documentation and every step of the transaction.</p></div>
+<div><span class="n">04</span><span class="ic"><svg class="i"><use href="#i-wallet"/></svg></span><h3>For every budget</h3><p>Flats and plots chosen around your location, budget and needs.</p></div>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section id="about" style="padding-bottom:clamp(90px,11vw,150px)">
+<div class="wrap about">
+<div class="about-media">
+<div class="m1" data-r="clip"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format&fit=crop" alt="Modern villa at dusk" data-parallax></div>
+<div class="m2" id="logoCard"><img data-logo="mark" alt="Ashoka Properties logo"><small style="display:block;text-align:center;font-weight:700;font-size:13px;margin-top:8px">Your Trust is our Identity</small></div>
+<div class="badge" data-r="up"><b>Sale · Purchase · Rent</b>All under one roof</div>
+</div>
+<div>
+<span class="kicker" data-r="up">About Us</span>
+<h2 data-r="up">Welcome to<br><span class="serif">Ashoka Properties</span></h2>
+<p class="lead" data-r="up">Ashoka Properties, a unit of <b>Ashokaa Smart LLP</b>, is a trusted property consultancy in Sonipat and Jindal Global City. We help clients with property sale, purchase and renting, with reliable guidance throughout the process.</p>
+<p class="quote" data-r="up">“Your Trust is our Identity.”</p>
+<ul class="checks" data-r="up">
+<li>Trusted Property Consultancy</li>
+<li>Sale, Purchase &amp; Renting</li>
+<li>Flats &amp; Plots in Prime Locations</li>
+<li>Professional &amp; Reliable Guidance</li>
+</ul>
+<div class="call" data-r="up">
+<a href="#contact" class="btn btn-dark magnetic">Visit Our Office <span class="arr">→</span></a>
+<a href="tel:+919350974852" class="ph"><i><svg class="i"><use href="#i-phone"/></svg></i><div><small>Call us anytime</small><b>+91 93509 74852</b></div></a>
+</div>
+</div>
+</div>
+</section>
+<!-- PROCESS -->
+<section class="process pad" id="process">
+<div class="wrap pgrid">
+<div class="sticky">
+<span class="kicker" data-r="up">How it works</span>
+<h2 data-r="up">3 easy steps to <span class="serif">your property</span></h2>
+<p class="lead" data-r="up">Simple, transparent and hassle-free — from the first conversation to the final deal.</p>
+<img data-logo="mark" style="filter:invert(1)" alt="">
+</div>
+<div class="steps" id="steps">
+<div class="rail"><i id="rail"></i></div>
+<div class="step" data-r="up"><div class="n">01</div><h3>Tell us what you need</h3><p>Share your requirement, preferred location and budget. We understand your needs and suggest suitable options.</p></div>
+<div class="step" data-r="up"><div class="n">02</div><h3>Visit &amp; choose</h3><p>See flats, plots and other properties in Sonipat and Jindal Global City that match your requirements.</p></div>
+<div class="step" data-r="up"><div class="n">03</div><h3>Close the deal</h3><p>We assist with negotiation, documentation and the full transaction for a smooth, worry-free experience.</p></div>
+</div>
+</div>
+</section>
+<!-- LOCATIONS -->
+<section class="pad" id="areas">
+<div class="wrap">
+<div class="head"><div><span class="kicker" data-r="up">Where we work</span><h2 data-r="up">Locations we <span class="serif">know best</span></h2></div></div>
+<div class="areas">
+<a href="#enquiry" class="area" data-r="clip" data-cursor="Enquire"><div class="im"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80&auto=format&fit=crop" alt="" data-parallax></div><div><small>Our home base</small><h3>Jindal Global City</h3><p>Our office is right here in A-Block, Sector 35 — flats, plots and rentals in and around Jindal Global City.</p><span class="pill"><svg class="i" style="width:16px;height:16px"><use href="#i-pin"/></svg> SCO-64, A-Block</span></div></a>
+<a href="#enquiry" class="area" data-r="clip" data-cursor="Enquire"><div class="im"><img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1600&q=80&auto=format&fit=crop" alt="" data-parallax></div><div><small>Across the city</small><h3>Sonipat</h3><p>Residential and commercial properties across Sonipat for families, investors and businesses.</p><span class="pill"><svg class="i" style="width:16px;height:16px"><use href="#i-home"/></svg> Homes · Plots · Shops</span></div></a>
+</div>
+</div>
+</section>
+<!-- 3D GALLERY WALL -->
+<section class="wall" id="gallery">
+<div class="wrap head"><span class="kicker" data-r="up">Gallery</span><h2 data-r="up">Spaces you'll <span class="serif">love</span></h2></div>
+<div class="wall-grid" id="wall">
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80&auto=format&fit=crop" alt="Villa with pool"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80&auto=format&fit=crop" alt="Living room"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1600&q=80&auto=format&fit=crop" alt="Staircase"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=80&auto=format&fit=crop" alt="Modern house"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=80&auto=format&fit=crop" alt="Bathroom"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=80&auto=format&fit=crop" alt="Modern facade"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=80&auto=format&fit=crop" alt="Interior detail"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1600&q=80&auto=format&fit=crop" alt="Interior with view"></figure>
+<figure data-cursor="View"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80&auto=format&fit=crop" alt="Living space"></figure>
+</div>
+</section>
+<!-- REVIEWS -->
+<section class="pad" id="reviews" style="padding-top:0">
+<div class="wrap head"><div><span class="kicker" data-r="up">Client Reviews</span><h2 data-r="up">What our <span class="serif">clients say</span></h2></div></div>
+<div class="revs" id="revs"></div>
+</section>
+<!-- ENQUIRY -->
+<section id="enquiry" style="padding-bottom:clamp(90px,11vw,150px)">
+<div class="wrap">
+<div class="enq" data-r="up">
+<div class="enq-media">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80&auto=format&fit=crop" alt="Beautiful family home" data-parallax>
+<div class="txt"><span class="kicker">Schedule a visit</span><h3>Let's find the right <br>property for you.</h3><p>Fill the form — we reply on WhatsApp.</p></div>
+</div>
+<form id="form">
+<h3>Send an enquiry</h3>
+<p class="note">Takes 30 seconds. It opens WhatsApp with your message ready to send.</p>
+<div class="field"><label for="name">Your name</label><input id="name" required placeholder="Full name" autocomplete="name"></div>
+<div class="field"><label for="phone">Phone</label><input id="phone" type="tel" required placeholder="+91" autocomplete="tel"></div>
+<div class="field full"><label>I'm interested in</label>
+<div class="chips">
+<input type="radio" name="svc" id="s1" value="Purchase" checked><label for="s1">Buy</label>
+<input type="radio" name="svc" id="s2" value="Sale"><label for="s2">Sell</label>
+<input type="radio" name="svc" id="s3" value="Renting"><label for="s3">Rent</label>
+<input type="radio" name="svc" id="s4" value="Flat"><label for="s4">Flat</label>
+<input type="radio" name="svc" id="s5" value="Plot"><label for="s5">Plot</label>
+<input type="radio" name="svc" id="s6" value="Commercial Property"><label for="s6">Commercial</label>
+</div>
+</div>
+<div class="field full"><label for="msg">Message (optional)</label><textarea id="msg" placeholder="Preferred location, budget, timeline…"></textarea></div>
+<button class="btn btn-wa" type="submit">Send on WhatsApp <span class="arr">→</span></button>
+</form>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<div class="wrap">
+<div class="head"><div><span class="kicker" data-r="up">Get in touch</span><h2 data-r="up">Visit our <span class="serif">office</span></h2></div></div>
+<div class="contact">
+<div style="display:grid;gap:20px">
+<div class="cbox" data-r="up"><h3>Office Address</h3><address>SCO - 64, A-Block,<br>Jindal Global City,<br>Sec. 35, Sonipat - 131001</address>
+<a class="btn btn-dark magnetic" style="margin-top:20px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=AshokaA+PROPERTIES+Jindal+Global+City+Sonipat">Get Directions <span class="arr">→</span></a></div>
+<div class="cbox" data-r="up"><h3>Call Us</h3>
+<div class="phones">
+<a href="tel:+919350974852"><svg class="i"><use href="#i-phone"/></svg>+91 93509 74852</a><a href="tel:+919311182344"><svg class="i"><use href="#i-phone"/></svg>+91 93111 82344</a>
+<a href="tel:+919910092536"><svg class="i"><use href="#i-phone"/></svg>+91 99100 92536</a><a href="tel:+919266159111"><svg class="i"><use href="#i-phone"/></svg>+91 92661 59111</a>
+</div>
+</div>
+</div>
+<div class="map" data-r="clip"><iframe loading="lazy" title="Ashoka Properties location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3492.9941037374883!2d77.11765749999999!3d28.898523299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dad0030292dc5%3A0x63e5742753713077!2sAshokaA%20PROPERTIES!5e0!3m2!1sen!2sin!4v1786701583263!5m2!1sen!2sin"></iframe></div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<div class="wrap" style="margin-top:clamp(90px,10vw,140px)">
+<div class="cta-band" data-r="up">
+<img class="mk" id="ctaMark" data-logo="mark" style="filter:invert(1)" alt="">
+<div><h2>Ready to find your <span class="serif">property?</span></h2><p>Call or WhatsApp us today — we're happy to help.</p></div>
+<div class="acts">
+<a href="tel:+919350974852" class="btn btn-dark magnetic"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> Call Now</a>
+<a href="https://wa.me/919350974852" target="_blank" rel="noopener" class="btn btn-wa magnetic">WhatsApp Us <span class="arr">→</span></a>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="fgrid">
+<div>
+<div class="flogo"><img data-logo="mark" style="filter:invert(1)" alt=""><div><b>Ashoka Properties</b><small>Your Trust is our Identity</small></div></div>
+<p style="margin-top:20px">A trusted real estate consultancy for buying, selling and renting residential and commercial properties.</p>
+<p style="margin-top:10px;color:#fff;font-weight:600">A Unit of Ashokaa Smart LLP</p>
+</div>
+<div><h4>Quick Links</h4><ul><li><a href="#top">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#areas">Locations</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+<div><h4>Our Services</h4><ul><li><a href="#services">Property Sale</a></li><li><a href="#services">Property Purchase</a></li><li><a href="#services">Property Renting</a></li><li><a href="#services">Flats</a></li><li><a href="#services">Plots</a></li></ul></div>
+<div><h4>Get In Touch</h4><p>SCO - 64, A-Block, Jindal Global City, Sec. 35, Sonipat - 131001</p>
+<ul style="margin-top:12px"><li><a href="tel:+919350974852">+91 93509 74852</a></li><li><a href="tel:+919311182344">+91 93111 82344</a></li><li><a href="tel:+919910092536">+91 99100 92536</a></li><li><a href="tel:+919266159111">+91 92661 59111</a></li></ul></div>
+</div>
+<div class="fbig" id="fbig">ASHOKA</div>
+<div class="fbot"><span>© 2026 Ashoka Properties. All rights reserved.</span><span>Your Trust is our Identity</span></div>
+</div>
+</footer>
+<a class="wa" href="https://wa.me/919350974852" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.3 3.7C18.1 1.3 15.1 0 12 0 5.5 0 .2 5.3.2 11.8c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.6-8.2z"/></svg>
+</a>
+<div class="mbar">
+<a href="tel:+919350974852" class="btn btn-dark"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> Call</a>
+<a href="https://wa.me/919350974852" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp</a>
+</div>
+<script>
+setTimeout(function () {
+if (!document.body.classList.contains('loading')) return;
+document.body.classList.remove('loading');
+var l = document.getElementById('loader'); if (l) l.style.display = 'none';
+document.documentElement.classList.add('no-webgl');
+}, 7000);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+function createScene(canvas, { mobile = false } = {}) {
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = !mobile;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0xd6e9fb, 60, 170);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 400);
+scene.add(new THREE.HemisphereLight(0xcfe6ff, 0xb9a98c, 0.9));
+const sun = new THREE.DirectionalLight(0xfff1dc, 2.4);
+sun.position.set(22, 34, 18);
+sun.castShadow = true;
+sun.shadow.mapSize.set(mobile ? 1024 : 2048, mobile ? 1024 : 2048);
+Object.assign(sun.shadow.camera, { left: -30, right: 30, top: 30, bottom: -30, near: 1, far: 100 });
+sun.shadow.bias = -0.0004;
+sun.shadow.normalBias = 0.02;
+scene.add(sun);
+const glow = new THREE.PointLight(0xffc27a, 30, 22, 1.6);
+glow.position.set(0, 3, 4);
+scene.add(glow);
+const std = (color, roughness = 0.8, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness, ...extra });
+const M = {
+white: std(0xf4f1eb, 0.85),
+stone: std(0xe6dfd2, 0.95),
+feature: std(0x8a8176, 0.9),
+dark: std(0x24272c, 0.5, { metalness: 0.4 }),
+wood: std(0x9b6a3c, 0.65),
+glass: new THREE.MeshPhysicalMaterial({ color: 0x2a4256, metalness: 0.1, roughness: 0.04, transparent: true, opacity: 0.34, envMapIntensity: 1.6, depthWrite: false }),
+warm: new THREE.MeshBasicMaterial({ color: 0xffd7a1 }),
+water: new THREE.MeshPhysicalMaterial({ color: 0x47bde3, roughness: 0.06, metalness: 0, clearcoat: 1, envMapIntensity: 1.8, emissive: 0x0a4d66, emissiveIntensity: 0.25 }),
+lawn: std(0xa9c28a, 1),
+leaf: std(0x6e9b52, 0.9, { flatShading: true }),
+leafDark: std(0x3f6b3a, 0.9, { flatShading: true }),
+trunk: std(0x6b4a33, 1),
+cloud: std(0xffffff, 1, { emissive: 0xffffff, emissiveIntensity: 0.35 }),
+};
+const villa = new THREE.Group();
+scene.add(villa);
+const box = (w, h, d, mat, x, y, z, parent = villa) => {
+const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+m.position.set(x, y, z);
+m.castShadow = mat !== M.glass && mat !== M.warm;
+m.receiveShadow = true;
+parent.add(m);
+return m;
+};
+const lawn = new THREE.Mesh(new THREE.CircleGeometry(160, 64), M.lawn);
+lawn.rotation.x = -Math.PI / 2;
+lawn.receiveShadow = true;
+scene.add(lawn);
+box(28, 0.4, 20, M.stone, 0, 0.2, 1);
+box(5.2, 3.4, 8.4, M.white, -6, 2.1, -1.2);
+box(10.4, 3.0, 7.8, M.glass, 2.2, 1.9, -1.2);
+box(10.2, 2.8, 0.1, M.warm, 2.2, 1.9, -4.9);
+box(0.1, 2.8, 7.4, M.warm, 7.2, 1.9, -1.2);
+for (let x = -2.8; x <= 7.3; x += 2) box(0.08, 3.0, 0.08, M.dark, x, 1.9, 2.75);
+box(17.5, 0.45, 9.6, M.white, 0.2, 3.62, -1.2);
+box(13.6, 2.8, 8.2, M.glass, -2.4, 5.25, 0.6);
+box(13.4, 2.6, 0.1, M.warm, -2.4, 5.25, -3.4);
+box(0.6, 3.3, 8.8, M.white, -9.2, 5.3, 0.6);
+box(14.4, 0.7, 8.8, M.white, -2.1, 7.0, 0.6);
+box(15.2, 0.14, 9.6, M.dark, -2.1, 7.42, 0.6);
+for (let x = 0.4; x <= 4.6; x += 0.3) box(0.12, 2.7, 0.14, M.wood, x, 5.25, 4.95);
+box(13.6, 0.12, 0.12, M.dark, -2.4, 4.1, 5.0); // balcony rail line
+box(6.4, 2.6, 5.6, M.white, 3.6, 8.75, -1.6);
+box(5.2, 2.0, 0.1, M.glass, 3.6, 8.7, 1.25);
+box(5.0, 1.9, 0.1, M.warm, 3.6, 8.7, 0.9);
+box(7.4, 0.14, 6.6, M.dark, 3.6, 10.12, -1.6);
+box(1.3, 8.2, 10, M.feature, -10.2, 4.3, -1);
+box(1.4, 2.4, 1.4, M.feature, -6.5, 8.6, -3.5);
+box(11.4, 0.08, 5.4, M.dark, 4.2, 0.42, 7.2);
+const water = box(10.8, 0.1, 4.8, M.water, 4.2, 0.45, 7.2);
+for (const x of [-3.2, -1.2]) {
+box(1.1, 0.25, 2.4, M.white, x, 0.62, 7.4);
+box(1.1, 0.7, 0.2, M.white, x, 0.95, 6.3).rotation.x = -0.5;
+}
+box(0.9, 0.9, 18, M.leafDark, -13.6, 0.85, 1);
+box(10, 0.9, 0.9, M.leafDark, -8.5, 0.85, 10.6);
+const tree = (x, z, s = 1, kind = 'round') => {
+const g = new THREE.Group();
+const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.12 * s, 0.22 * s, 2.4 * s, 6), M.trunk);
+trunk.position.y = 1.2 * s; trunk.castShadow = true; g.add(trunk);
+if (kind === 'cypress') {
+const c = new THREE.Mesh(new THREE.ConeGeometry(0.9 * s, 6 * s, 7), M.leafDark);
+c.position.y = 4 * s; c.castShadow = true; g.add(c);
+} else {
+for (const [dx, dy, r] of [[0, 3, 1.6], [0.8, 3.6, 1.1], [-0.7, 3.5, 1.0]]) {
+const f = new THREE.Mesh(new THREE.IcosahedronGeometry(r * s, 1), M.leaf);
+f.position.set(dx * s, dy * s, 0); f.castShadow = true; g.add(f);
+}
+}
+g.position.set(x, 0.4, z);
+g.rotation.y = Math.random() * 6;
+scene.add(g);
+return g;
+};
+const trees = [
+tree(-16, -6, 1.3), tree(15, -7, 1.5), tree(17, 3, 1.1), tree(-18, 6, 1.0),
+tree(11.5, -4.5, 0.9, 'cypress'), tree(-12, -5, 1, 'cypress'), tree(-12, 3, 0.9, 'cypress'),
+tree(24, -18, 2), tree(-26, -20, 2.2), tree(4, -22, 1.8), tree(-6, -26, 2), tree(30, 6, 1.6), tree(-30, 8, 1.7),
+];
+const clouds = [];
+const cloudGeo = new THREE.SphereGeometry(1, 20, 14);
+for (let i = 0; i < (mobile ? 6 : 10); i++) {
+const g = new THREE.Group();
+const n = 4 + (i % 3);
+for (let k = 0; k < n; k++) {
+const s = new THREE.Mesh(cloudGeo, M.cloud);
+const r = 2.2 + Math.random() * 2.2;
+s.scale.set(r * 1.4, r, r);
+s.position.set((k - n / 2) * 2.6, Math.random() * 1.2, Math.random() * 1.5);
+g.add(s);
+}
+g.position.set(-70 + Math.random() * 140, 20 + Math.random() * 14, -30 - Math.random() * 50);
+g.userData.speed = 0.6 + Math.random() * 0.8;
+scene.add(g);
+clouds.push(g);
+}
+const target = new THREE.Vector3(0, 6.5, 0);
+const state = { progress: 0, intro: 0, px: 0, py: 0, sx: 0, sy: 0 };
+function place() {
+const p = state.progress, e = 1 - Math.pow(1 - state.intro, 3);
+const aspect = camera.aspect;
+const far = aspect < 0.8 ? 1.75 : aspect < 1.2 ? 1.3 : 1;
+const theta = -0.42 + p * 1.25 + state.sx * 0.12 - (1 - e) * 0.9;
+const radius = (40 - p * 12) * far + (1 - e) * 55;
+const height = 7.5 + p * 4 - state.sy * 2 + (1 - e) * 24;
+camera.position.set(Math.sin(theta) * radius, height, Math.cos(theta) * radius);
+target.y = 13 - p * 8.5 + (aspect < 0.8 ? 1.5 : aspect < 1.2 ? 3 : 0) * (1 - p);
+camera.lookAt(target);
+}
+function resize() {
+const w = canvas.clientWidth, h = canvas.clientHeight;
+if (!w || !h) return;
+renderer.setSize(w, h, false);
+camera.aspect = w / h;
+camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+resize();
+let running = true, last = performance.now();
+function frame(now) {
+const dt = Math.min((now - last) / 1000, 0.05); last = now;
+if (running) {
+state.sx += (state.px - state.sx) * 0.05;
+state.sy += (state.py - state.sy) * 0.05;
+for (const c of clouds) { c.position.x += c.userData.speed * dt; if (c.position.x > 80) c.position.x = -80; }
+for (const [i, t] of trees.entries()) t.rotation.z = Math.sin(now / 1400 + i) * 0.012;
+M.water.emissiveIntensity = 0.22 + Math.sin(now / 600) * 0.06;
+glow.intensity = 26 + Math.sin(now / 900) * 4;
+place();
+renderer.render(scene, camera);
+}
+requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+return {
+setProgress(p) { state.progress = p; },
+setPointer(x, y) { state.px = x; state.py = y; },
+setIntro(v) { state.intro = v; },
+setRunning(v) { running = v; if (v) last = performance.now(); },
+renderOnce() { place(); renderer.render(scene, camera); },
+};
+}
+window.createScene = createScene;
+window.dispatchEvent(new Event('scene-lib'));
+</script>
+<script type="module">
+const { gsap, ScrollTrigger, Lenis } = window;
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobile = matchMedia('(max-width: 640px)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const nav = $('#nav');
+let lenis = null;
+if (!reduce && Lenis && finePointer) {
+lenis = new Lenis({ lerp: 0.09 });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+lenis.stop();
+}
+const scrollToEl = el => lenis ? lenis.scrollTo(el, { offset: -10, duration: 1.6 }) : el.scrollIntoView({ behavior: 'smooth' });
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+const id = a.getAttribute('href');
+const el = id.length > 1 && document.querySelector(id);
+if (!el) return;
+e.preventDefault();
+nav.classList.remove('open');
+scrollToEl(el);
+}));
+$('#burger').onclick = () => nav.classList.toggle('open');
+$$('[data-svc]').forEach(a => a.addEventListener('click', () => {
+const r = document.querySelector(`input[name=svc][value="${a.dataset.svc}"]`);
+if (r) r.checked = true;
+}));
+function splitChars(el) {
+const chars = [];
+const walk = node => {
+for (const n of [...node.childNodes]) {
+if (n.nodeType === 3) {
+const frag = document.createDocumentFragment();
+n.textContent.split(/(\s+)/).forEach(part => {
+if (!part) return;
+if (/^\s+$/.test(part)) { frag.append(' '); return; }
+const w = document.createElement('span'); w.className = 'w';
+for (const ch of part) { const c = document.createElement('span'); c.className = 'c'; c.textContent = ch; w.append(c); chars.push(c); }
+frag.append(w);
+});
+n.replaceWith(frag);
+} else if (n.nodeType === 1) walk(n);
+}
+};
+walk(el);
+return chars;
+}
+function splitWords(el) {
+const words = [];
+const walk = node => {
+for (const n of [...node.childNodes]) {
+if (n.nodeType === 3) {
+const frag = document.createDocumentFragment();
+n.textContent.split(/(\s+)/).forEach(part => {
+if (!part) return;
+if (/^\s+$/.test(part)) { frag.append(part); return; }
+const w = document.createElement('span'); w.className = 'wd'; w.textContent = part; frag.append(w); words.push(w);
+});
+n.replaceWith(frag);
+} else if (n.nodeType === 1) walk(n);
+}
+};
+walk(el);
+return words;
+}
+const reviews = [
+['Ashoka Properties provided excellent guidance throughout my property search. The team was professional, helpful and transparent.', 'Rajesh Kumar', 'Property Buyer'],
+['I was looking for a property in Jindal Global City and Ashoka Properties helped me find suitable options according to my requirements and budget.', 'Amit Sharma', 'Home Buyer'],
+['The team made the property selling process simple and convenient. Their communication and professional approach were really appreciated.', 'Sunil Verma', 'Property Owner'],
+['Ashoka Properties helped us understand the property options clearly and guided us throughout the purchase process. A reliable property consultancy.', 'Pankaj Gupta', 'Property Investor'],
+['From property selection to final documentation, the team provided helpful assistance. The overall experience was smooth and professional.', 'Neeraj Singh', 'Property Client'],
+['A professional and customer-focused property consultancy. Ashoka Properties made our property experience much easier with their guidance.', 'Manoj Aggarwal', 'Property Client'],
+];
+const revCard = ([q, n, r]) => `<article class="rev"><div class="stars">★★★★★</div><q>${q}</q><div class="who"><div class="av">${n.split(' ').map(s => s[0]).join('')}</div><div><b>${n}</b><span>${r}</span></div></div></article>`;
+const rowA = reviews.slice(0, 3).concat(reviews.slice(3)).map(revCard).join('');
+const rowB = reviews.slice(3).concat(reviews.slice(0, 3)).map(revCard).join('');
+$('#revs').innerHTML = `<div class="row">${rowA + rowA}</div><div class="row rev2">${rowB + rowB}</div>`;
+$('#form').addEventListener('submit', e => {
+e.preventDefault();
+const v = id => document.getElementById(id).value.trim();
+const svc = document.querySelector('input[name=svc]:checked').value;
+const text = `Hello Ashoka Properties,\nName: ${v('name')}\nPhone: ${v('phone')}\nInterested in: ${svc}\n${v('msg')}`;
+window.open('https://wa.me/919350974852?text=' + encodeURIComponent(text), '_blank');
+});
+let scene = null, introPlayed = false;
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const sceneReady = new Promise((ok, no) => { if (window.createScene) return ok({ createScene: window.createScene }); addEventListener('scene-lib', () => ok({ createScene: window.createScene }), { once: true }); setTimeout(() => no(new Error('3D library did not load')), 8000); })
+.then(m => {
+scene = m.createScene($('#scene'), { mobile });
+if (introPlayed) gsap.to({ v: 0 }, { v: 1, duration: 2.4, ease: 'power3.out', onUpdate() { scene.setIntro(this.targets()[0].v); } });
+})
+.catch(err => { console.warn('3D unavailable, using photo instead', err); document.documentElement.classList.add('no-webgl'); });
+if (finePointer) addEventListener('pointermove', e => scene?.setPointer(e.clientX / innerWidth - 0.5, e.clientY / innerHeight - 0.5));
+else if (!reduce) gsap.ticker.add(t => scene?.setPointer(Math.sin(t * 0.35) * 0.35, Math.cos(t * 0.25) * 0.15));
+const heroChars = splitChars($('#heroTitle'));
+gsap.set(heroChars, { yPercent: 115, rotateX: -80, opacity: 0 });
+gsap.set('.hero-in', { y: 30, opacity: 0 });
+const count = { v: 0 };
+gsap.to('#loader img', { opacity: 1, scale: 1, rotateY: 0, duration: 1.1, ease: 'expo.out', delay: 0.1 });
+gsap.to('#loader .tag', { opacity: 1, duration: 0.8, delay: 0.5 });
+const counting = gsap.to(count, { v: 90, duration: 1.6, ease: 'power2.out', onUpdate: () => { $('#loadNum').textContent = Math.round(count.v); gsap.set('#loadBar', { scaleX: count.v / 100 }); } });
+Promise.all([Promise.race([sceneReady, wait(mobile ? 2500 : 4500)]), Promise.race([document.fonts?.ready, wait(1500)]), wait(reduce ? 0 : 1300)]).then(() => {
+introPlayed = true;
+const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+tl.to(count, { v: 100, duration: 0.4, ease: 'power1.out', onUpdate: () => { $('#loadNum').textContent = Math.round(count.v); gsap.set('#loadBar', { scaleX: count.v / 100 }); } }, counting.isActive() ? '+=0' : 0)
+.to('#loader .mid', { y: -40, opacity: 0, duration: 0.6, ease: 'power2.in' })
+.to('#loader', { yPercent: -100, duration: 1.1, ease: 'expo.inOut' }, '<0.2')
+.add(() => { document.body.classList.remove('loading'); lenis?.start(); $('#loader').style.display = 'none'; })
+.to({ v: 0 }, { v: 1, duration: reduce ? 0.01 : 2.8, ease: 'power3.out', onUpdate() { scene?.setIntro(this.targets()[0].v); } }, '<-0.6')
+.to(heroChars, { yPercent: 0, rotateX: 0, opacity: 1, duration: 1.4, stagger: 0.035 }, '<0.3')
+.to('.hero-in', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '<0.4');
+});
+if (!reduce) {
+gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: mobile ? 'bottom top' : '+=120%', pin: !mobile, scrub: mobile ? 0.5 : true, onUpdate: s => scene?.setProgress(s.progress) } })
+.to('#heroCopy', { y: -120, opacity: 0, scale: 0.92, ease: 'none', duration: 0.45 }, 0)
+.to('.hero-foot', { y: 60, opacity: 0, ease: 'none', duration: 0.25 }, 0)
+.to({}, { duration: 0.55 });
+ScrollTrigger.create({ trigger: '.marquee', start: 'top bottom', end: 'top top', onToggle: () => {}, onLeave: () => scene?.setRunning(false), onEnterBack: () => scene?.setRunning(true) });
+ScrollTrigger.create({ onUpdate: s => nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 300 && !nav.classList.contains('open')) });
+const mq = gsap.to('#marquee', { xPercent: -50, duration: 28, ease: 'none', repeat: -1 });
+ScrollTrigger.create({ onUpdate: s => {
+gsap.to(mq, { timeScale: (s.direction || 1) * (1 + Math.min(Math.abs(s.getVelocity()) / 300, 5)), duration: 0.3, overwrite: true });
+gsap.to(mq, { timeScale: s.direction || 1, duration: 1.2, delay: 0.3 });
+} });
+gsap.to(splitWords($('#statement')), { opacity: 1, stagger: 0.06, ease: 'none', scrollTrigger: { trigger: '#statement', start: 'top 82%', end: 'bottom 45%', scrub: true } });
+gsap.set('[data-r="up"]', { y: 90, rotateX: -28, opacity: 0, transformPerspective: 900, transformOrigin: '50% 100%' });
+ScrollTrigger.batch('[data-r="up"]', { start: 'top 90%', once: true, onEnter: b => gsap.to(b, { y: 0, rotateX: 0, opacity: 1, duration: 1.3, ease: 'expo.out', stagger: 0.1 }) });
+$$('[data-r="clip"]').forEach(el => gsap.fromTo(el,
+{ clipPath: 'inset(16% 14% 16% 14% round 40px)', scale: 0.94 },
+{ clipPath: 'inset(0% 0% 0% 0% round 32px)', scale: 1, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } }));
+$$('[data-parallax]').forEach(img => gsap.fromTo(img, { yPercent: -9 }, { yPercent: 9, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } }));
+const cards = $$('#hsTrack .card');
+const mm = gsap.matchMedia();
+mm.add('(min-width: 641px)', () => {
+const track = $('#hsTrack');
+const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+const tilt = () => {
+const cx = innerWidth / 2;
+cards.forEach(c => {
+const r = c.getBoundingClientRect();
+const d = gsap.utils.clamp(-1.2, 1.2, (r.left + r.width / 2 - cx) / innerWidth);
+gsap.set(c, { rotateY: d * -42, z: -Math.abs(d) * 260, rotateZ: d * -2.5, transformPerspective: 1200 });
+});
+};
+gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '#services', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, onUpdate: tilt, onRefresh: tilt } });
+tilt();
+});
+mm.add('(max-width: 640px)', () => {
+cards.forEach(c => gsap.from(c, { y: 120, rotateX: -35, opacity: 0, transformPerspective: 900, transformOrigin: '50% 100%', duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: c, start: 'top 92%', once: true } }));
+});
+gsap.from('#whyGrid > div', { rotateX: -95, opacity: 0, transformPerspective: 1000, transformOrigin: '50% 0%', stagger: 0.14, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#whyGrid', start: 'top 82%', once: true } });
+gsap.fromTo('#logoCard', { y: 90, rotateY: -30, rotateX: 18 }, { y: -40, rotateY: 12, rotateX: -6, ease: 'none', scrollTrigger: { trigger: '.about-media', start: 'top bottom', end: 'bottom top', scrub: true } });
+gsap.to('#rail', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#steps', start: 'top 70%', end: 'bottom 60%', scrub: true } });
+const k = mobile ? 0.4 : 1;
+const wallEnd = mobile ? 'top 35%' : 'center 55%';
+const depths = [-220, 160, -90, 260, -160, 110, -260, 70, 190];
+gsap.fromTo('#wall', { rotateX: 52 * k, rotateZ: -12 * k, scale: 1 - 0.26 * k, yPercent: -4 * k }, { rotateX: 0, rotateZ: 0, scale: 1, yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
+gsap.fromTo('#wall figure', { z: i => depths[i % depths.length] * k }, { z: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
+gsap.fromTo('#ctaMark', { rotate: -18, y: 80 }, { rotate: 12, y: -40, ease: 'none', scrollTrigger: { trigger: '.cta-band', start: 'top bottom', end: 'bottom top', scrub: true } });
+const fb = $('#fbig'); fb.innerHTML = [...fb.textContent].map(c => `<span>${c}</span>`).join('');
+gsap.from('#fbig span', { yPercent: 110, rotateX: -70, transformPerspective: 600, stagger: 0.06, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#fbig', start: 'top 95%', once: true } });
+addEventListener('load', () => ScrollTrigger.refresh());
+}
+if (finePointer && !reduce) {
+const dot = $('#cursor'), ring = $('#cursorRing'), label = ring.querySelector('span');
+const dx = gsap.quickTo(dot, 'x', { duration: 0.12 }), dy = gsap.quickTo(dot, 'y', { duration: 0.12 });
+const rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3' }), ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3' });
+addEventListener('pointermove', e => { document.body.classList.add('has-cursor'); dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+document.addEventListener('pointerleave', () => document.body.classList.remove('has-cursor'));
+$$('[data-cursor]').forEach(el => {
+el.addEventListener('pointerenter', () => { label.textContent = el.dataset.cursor; ring.classList.add('big'); });
+el.addEventListener('pointerleave', () => ring.classList.remove('big'));
+});
+$$('.magnetic').forEach(btn => {
+btn.addEventListener('pointermove', e => {
+const r = btn.getBoundingClientRect();
+gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.3, y: (e.clientY - r.top - r.height / 2) * 0.4, duration: 0.4, ease: 'power3' });
+});
+btn.addEventListener('pointerleave', () => gsap.to(btn, { x: 0, y: 0, duration: 0.9, ease: 'elastic.out(1,.4)' }));
+});
+const card = $('#logoCard'), media = $('.about-media');
+media.addEventListener('pointermove', e => {
+const r = media.getBoundingClientRect();
+gsap.to(card.querySelector('img'), { x: ((e.clientX - r.left) / r.width - 0.5) * 24, y: ((e.clientY - r.top) / r.height - 0.5) * 24, duration: 0.6 });
+});
+} else {
+$('#cursor').remove(); $('#cursorRing').remove();
+}
+</script>
+</body>
+</html>
