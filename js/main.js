@@ -104,7 +104,7 @@ $('#form').addEventListener('submit', e => {
 // ---------- 3D scene ----------
 let scene = null, introPlayed = false;
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const sceneReady = import('./scene.js?v=7')
+const sceneReady = import('./scene.js?v=9')
   .then(m => {
     scene = m.createScene($('#scene'), { mobile });
     // 3D arrived after the intro already ran (slow network): fly the camera in now
