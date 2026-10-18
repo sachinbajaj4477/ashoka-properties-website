@@ -36,7 +36,8 @@ svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .serif{font-family:'Playfair Display',serif;font-style:italic;font-weight:500}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
 .kicker::before{content:"";width:28px;height:2px;background:currentColor}
-h2{font-size:clamp(34px,5vw,68px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin-top:14px}
+h2{font-size:clamp(34px,5vw,68px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin-top:14px;text-wrap:balance}
+h1,h3{text-wrap:balance}
 h2 .serif{color:var(--deep);letter-spacing:-.02em}
 .lead{color:var(--muted);font-size:17px;line-height:1.7;max-width:540px;margin-top:18px}
 section{position:relative}
@@ -312,6 +313,13 @@ form{grid-template-columns:1fr}
 .step::before{left:-29px}
 .rev{width:300px}
 .area{padding:28px;min-height:380px}
+.about-media .badge{left:12px;top:12px;padding:12px 16px;border-radius:16px}
+.about-media .badge b{font-size:16px}
+.about-media .m2{width:44%;padding:7%;border-width:6px}
+.enq-media{min-height:420px}
+.enq-media .txt{padding:28px}
+.enq-media h3{font-size:27px}
+.enq-media h3 br{display:none}
 .wa{display:none}
 .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:90;padding:8px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 14px 40px rgba(17,19,24,.2)}
 .mbar .btn{justify-content:center;padding:14px}
@@ -506,7 +514,7 @@ footer{padding-bottom:110px}
 <div class="enq" data-r="up">
 <div class="enq-media">
 <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80&auto=format&fit=crop" alt="Beautiful family home" data-parallax>
-<div class="txt"><span class="kicker">Schedule a visit</span><h3>Let's find the right<br>property for you.</h3><p>Fill the form — we reply on WhatsApp.</p></div>
+<div class="txt"><span class="kicker">Schedule a visit</span><h3>Let's find the right <br>property for you.</h3><p>Fill the form — we reply on WhatsApp.</p></div>
 </div>
 <form id="form">
 <h3>Send an enquiry</h3>
@@ -914,9 +922,11 @@ cards.forEach(c => gsap.from(c, { y: 120, rotateX: -35, opacity: 0, transformPer
 gsap.from('#whyGrid > div', { rotateX: -95, opacity: 0, transformPerspective: 1000, transformOrigin: '50% 0%', stagger: 0.14, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#whyGrid', start: 'top 82%', once: true } });
 gsap.fromTo('#logoCard', { y: 90, rotateY: -30, rotateX: 18 }, { y: -40, rotateY: 12, rotateX: -6, ease: 'none', scrollTrigger: { trigger: '.about-media', start: 'top bottom', end: 'bottom top', scrub: true } });
 gsap.to('#rail', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#steps', start: 'top 70%', end: 'bottom 60%', scrub: true } });
+const k = mobile ? 0.4 : 1;
+const wallEnd = mobile ? 'top 35%' : 'center 55%';
 const depths = [-220, 160, -90, 260, -160, 110, -260, 70, 190];
-gsap.fromTo('#wall', { rotateX: 52, rotateZ: -12, scale: 0.74, yPercent: -4 }, { rotateX: 0, rotateZ: 0, scale: 1, yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: 'center 55%', scrub: true } });
-gsap.fromTo('#wall figure', { z: i => depths[i % depths.length] }, { z: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: 'center 55%', scrub: true } });
+gsap.fromTo('#wall', { rotateX: 52 * k, rotateZ: -12 * k, scale: 1 - 0.26 * k, yPercent: -4 * k }, { rotateX: 0, rotateZ: 0, scale: 1, yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
+gsap.fromTo('#wall figure', { z: i => depths[i % depths.length] * k }, { z: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
 gsap.fromTo('#ctaMark', { rotate: -18, y: 80 }, { rotate: 12, y: -40, ease: 'none', scrollTrigger: { trigger: '.cta-band', start: 'top bottom', end: 'bottom top', scrub: true } });
 const fb = $('#fbig'); fb.innerHTML = [...fb.textContent].map(c => `<span>${c}</span>`).join('');
 gsap.from('#fbig span', { yPercent: 110, rotateX: -70, transformPerspective: 600, stagger: 0.06, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#fbig', start: 'top 95%', once: true } });

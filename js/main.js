@@ -188,9 +188,12 @@ if (!reduce) {
   gsap.to('#rail', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#steps', start: 'top 70%', end: 'bottom 60%', scrub: true } });
 
   // ---------- gallery: tilted 3D wall straightens out ----------
+  // phones get a gentler tilt that settles sooner, so photos don't overlap on a narrow screen
+  const k = mobile ? 0.4 : 1;
+  const wallEnd = mobile ? 'top 35%' : 'center 55%';
   const depths = [-220, 160, -90, 260, -160, 110, -260, 70, 190];
-  gsap.fromTo('#wall', { rotateX: 52, rotateZ: -12, scale: 0.74, yPercent: -4 }, { rotateX: 0, rotateZ: 0, scale: 1, yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: 'center 55%', scrub: true } });
-  gsap.fromTo('#wall figure', { z: i => depths[i % depths.length] }, { z: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: 'center 55%', scrub: true } });
+  gsap.fromTo('#wall', { rotateX: 52 * k, rotateZ: -12 * k, scale: 1 - 0.26 * k, yPercent: -4 * k }, { rotateX: 0, rotateZ: 0, scale: 1, yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
+  gsap.fromTo('#wall figure', { z: i => depths[i % depths.length] * k }, { z: 0, ease: 'none', scrollTrigger: { trigger: '.wall', start: 'top 90%', end: wallEnd, scrub: true } });
 
   // ---------- CTA logo + footer letters ----------
   gsap.fromTo('#ctaMark', { rotate: -18, y: 80 }, { rotate: 12, y: -40, ease: 'none', scrollTrigger: { trigger: '.cta-band', start: 'top bottom', end: 'bottom top', scrub: true } });
