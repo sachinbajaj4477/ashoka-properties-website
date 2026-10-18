@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=13">
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -151,6 +151,40 @@
     </div>
   </div>
 </section>
+
+<!-- 360 TOUR: scroll turns the camera a full circle round the 3D office building -->
+<section class="tour" id="tour">
+  <div class="stick">
+    <div class="wrap tour-head">
+      <span class="kicker">360° tour</span>
+      <h2>Walk around <span class="serif">our office</span></h2>
+    </div>
+    <div class="tour-deg" id="tourDeg" aria-hidden="true"><b>0°</b><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle id="tourRing" cx="22" cy="22" r="19" pathLength="100"/></svg></div>
+    <div class="wrap tour-caps">
+      <p class="tour-cap" data-from="0" data-to=".14"><b>The front</b>Our entrance on the A-Block plaza, Jindal Global City</p>
+      <p class="tour-cap" data-from=".14" data-to=".38"><b>The side wall</b>The big signboard you can see from the road</p>
+      <p class="tour-cap" data-from=".38" data-to=".62"><b>From above</b>Four floors, with a terrace on top</p>
+      <p class="tour-cap" data-from=".62" data-to=".86"><b>All the way round</b>Easy to spot from every side of the plaza</p>
+      <p class="tour-cap" data-from=".86" data-to="1.01"><b>Space for rent</b>Two glass floors at the front are available for rent. Ask us</p>
+    </div>
+    <div class="tour-hint">Keep scrolling to turn</div>
+  </div>
+</section>
+
+<!-- OFFICE -->
+<!-- STEP INSIDE: each scroll step zooms forward into the next real photo, like walking in the door -->
+<section class="walk" id="walk">
+  <div class="stick">
+    <figure class="walk-frame"><img src="images/office-building.jpg" alt="Ashoka Properties building"><figcaption><small>Step 1 of 5</small><b>You've arrived</b>SCO-64, A-Block, Jindal Global City</figcaption></figure>
+    <figure class="walk-frame"><img src="images/office-entrance.jpg" alt="Office entrance with plants"><figcaption><small>Step 2 of 5</small><b>Walk up the steps</b>Right off the paved plaza</figcaption></figure>
+    <figure class="walk-frame"><img src="images/office-storefront.jpg" alt="Glass storefront"><figcaption><small>Step 3 of 5</small><b>Through the glass doors</b>Sale · Purchase · Renting</figcaption></figure>
+    <figure class="walk-frame"><img src="images/office-interior.jpg" alt="Inside the office"><figcaption><small>Step 4 of 5</small><b>Inside our office</b>Bright, calm and ready for you</figcaption></figure>
+    <figure class="walk-frame"><img src="images/office-desk.jpg" alt="Meeting desk"><figcaption><small>Step 5 of 5</small><b>Take a seat</b>Let's talk about your property</figcaption></figure>
+    <div class="wrap walk-head"><span class="kicker">Step inside</span></div>
+    <div class="walk-dots" id="walkDots"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+<!-- /OFFICE -->
 
 <!-- PROCESS -->
 <section class="process pad" id="process">
@@ -327,6 +361,6 @@ setTimeout(function () {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script type="module" src="js/main.js?v=9"></script>
+<script type="module" src="js/main.js?v=13"></script>
 </body>
 </html>

@@ -102,10 +102,11 @@ $('#form').addEventListener('submit', e => {
 });
 
 // ---------- 3D scene ----------
-let scene = null, introPlayed = false;
+let scene = null, sceneMod = null, introPlayed = false;
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const sceneReady = import('./scene.js?v=9')
+const sceneReady = import('./scene.js?v=13')
   .then(m => {
+    sceneMod = m;
     scene = m.createScene($('#scene'), { mobile });
     // 3D arrived after the intro already ran (slow network): fly the camera in now
     if (introPlayed) gsap.to({ v: 0 }, { v: 1, duration: 2.4, ease: 'power3.out', onUpdate() { scene.setIntro(this.targets()[0].v); } });
@@ -148,7 +149,46 @@ if (!reduce) {
     .to('#heroCopy', { y: -120, opacity: 0, scale: 0.92, ease: 'none', duration: 0.45 }, 0)
     .to('.hero-foot', { y: 60, opacity: 0, ease: 'none', duration: 0.25 }, 0)
     .to({}, { duration: 0.55 });
-  ScrollTrigger.create({ trigger: '.marquee', start: 'top bottom', end: 'top top', onToggle: () => {}, onLeave: () => scene?.setRunning(false), onEnterBack: () => scene?.setRunning(true) });
+
+  // ---------- 360° tour: the hero's own 3D canvas moves into this section (one 3D scene only, so phones never freeze
+  // building a second one) and turns a full circle round the building as you scroll ----------
+  const canvas3d = $('#scene'), heroSlot = $('.hero-fallback'), tourSlot = $('#tour .stick');
+  const tourCaps = $$('.tour-cap'), tourDeg = $('#tourDeg b'), tourRing = $('#tourRing');
+  let inTour = false, heroVisible = true;
+  // the 3D only draws while the hero or the tour is on screen; everywhere else it rests to save battery
+  const run3d = () => scene?.setRunning(inTour || heroVisible);
+  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; run3d(); }).observe($('.hero'));
+  const showTour = p => {
+    tourDeg.textContent = Math.round(p * 360) + '°';
+    tourRing.style.strokeDasharray = `${p * 100} 100`;
+    tourCaps.forEach(c => c.classList.toggle('on', p >= +c.dataset.from && p < +c.dataset.to));
+    scene?.setTourProgress(p);
+  };
+  const moveTo3d = toTour => {
+    if (toTour === inTour) return;
+    inTour = toTour;
+    if (toTour) tourSlot.prepend(canvas3d); else heroSlot.after(canvas3d);
+    scene?.setMode(toTour);
+    run3d();
+  };
+  showTour(0);
+  ScrollTrigger.create({ trigger: '#tour', start: 'top bottom', end: 'bottom top', onToggle: s => moveTo3d(s.isActive) });
+  ScrollTrigger.create({ trigger: '#tour', start: 'top top', end: 'bottom bottom', scrub: true, onUpdate: s => showTour(s.progress) });
+  sceneReady.then(() => { if (inTour) scene?.setMode(true); run3d(); });
+
+  // ---------- step inside: each scroll step zooms forward through one photo into the next ----------
+  const frames = $$('.walk-frame'), dots = $$('#walkDots i');
+  if (frames.length) {
+    gsap.set(frames.slice(1), { opacity: 0, scale: 1.25 });
+    const walk = gsap.timeline({ scrollTrigger: { trigger: '#walk', start: 'top top', end: 'bottom bottom', scrub: 0.6,
+      onUpdate: s => { const i = Math.min(frames.length - 1, Math.round(s.progress * (frames.length - 1))); dots.forEach((d, k) => d.classList.toggle('on', k === i)); } } });
+    frames.forEach((f, i) => {
+      walk.fromTo(f.querySelector('img'), { scale: 1 }, { scale: 1.12, ease: 'none', duration: 1 }, i);
+      if (i < frames.length - 1) walk.to(f, { scale: 1.9, opacity: 0, ease: 'power2.in', duration: 0.6 }, i + 0.4)
+        .to(frames[i + 1], { scale: 1, opacity: 1, ease: 'power2.out', duration: 0.6 }, i + 0.4);
+    });
+    dots[0]?.classList.add('on');
+  }
 
   // nav hides on scroll down, returns on scroll up
   ScrollTrigger.create({ onUpdate: s => nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 300 && !nav.classList.contains('open')) });

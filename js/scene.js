@@ -6,7 +6,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const PHONES = '9350974852  9311182344  9910092536';
 
-export function createScene(canvas, { mobile = false } = {}) {
+export function createScene(canvas, { mobile = false, tour = false } = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mobile, alpha: true, powerPreference: 'high-performance' });
   // phones render fewer pixels so the 3D stays smooth and leaves room for the page's own animations
   renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.25 : 2));
@@ -294,11 +294,25 @@ export function createScene(canvas, { mobile = false } = {}) {
 
   // ---------- camera rig: starts on the front corner (front + side wall with its signboard), orbits as you scroll ----------
   const target = new THREE.Vector3(0, 9, -4);
-  const state = { progress: 0, intro: 0, px: 0, py: 0, sx: 0, sy: 0 };
+  // one scene serves both the hero and the 360° tour: the page moves this canvas between them and switches the mode
+  const state = { progress: 0, tourProgress: 0, intro: 0, px: 0, py: 0, sx: 0, sy: 0 };
+  let tourMode = tour;
 
   function place() {
     const p = state.progress, e = 1 - Math.pow(1 - state.intro, 3);
     const aspect = camera.aspect;
+    if (tourMode) {
+      // 360° walk-around: one full circle over the section's scroll, building centred, rising mid-way to show the roof
+      const tp = state.tourProgress;
+      const theta = 0.42 + tp * Math.PI * 2 + state.sx * 0.1;
+      // a tall phone screen is narrow, so the camera stands much further back to fit the whole building
+      const radius = aspect < 0.8 ? 74 : aspect < 1.2 ? 54 : 42;
+      const height = 7 + Math.sin(tp * Math.PI) * 12 - state.sy * 2;
+      target.set(0, 8.5, -8);
+      camera.position.set(target.x + Math.sin(theta) * radius, height, target.z + Math.cos(theta) * radius);
+      camera.lookAt(target);
+      return;
+    }
     const far = aspect < 0.8 ? 1.35 : aspect < 1.2 ? 1.15 : 1;
     const theta = 0.42 + p * 0.85 + state.sx * 0.12 - (1 - e) * 0.9;
     const radius = (42 - p * 10) * far + (1 - e) * 55;
@@ -338,6 +352,9 @@ export function createScene(canvas, { mobile = false } = {}) {
 
   return {
     setProgress(p) { state.progress = p; },
+    setTourProgress(p) { state.tourProgress = p; },
+    // switch between hero and tour framing after the canvas has been moved into the other section
+    setMode(isTour) { tourMode = isTour; resize(); },
     setPointer(x, y) { state.px = x; state.py = y; },
     setIntro(v) { state.intro = v; },
     setRunning(v) { running = v; if (v) last = performance.now(); },

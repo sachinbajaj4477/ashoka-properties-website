@@ -213,6 +213,34 @@ body.has-cursor .cursor,body.has-cursor .cursor-ring{opacity:1}
 .rev .av{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
 .rev .who b{display:block;font-size:15px}
 .rev .who span{font-size:13px;color:var(--muted)}
+.tour{height:340vh;background:linear-gradient(180deg,var(--sky-1),var(--sky-2) 45%,var(--sky-3))}
+.walk{height:460vh;background:var(--ink)}
+.tour .stick,.walk .stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.tour canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tour-head{position:absolute;left:0;right:0;top:clamp(96px,13vh,130px);z-index:2;pointer-events:none}
+.tour-head h2{color:var(--ink);margin-top:10px;max-width:520px}
+.tour-head .kicker{color:var(--deep)}
+.tour-deg{position:absolute;right:max(24px,calc((100vw - 1240px)/2));top:clamp(100px,14vh,140px);z-index:2;width:76px;height:76px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);box-shadow:0 14px 34px rgba(17,19,24,.14)}
+.tour-deg b{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.tour-deg svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);transform:rotate(-90deg)}
+.tour-deg circle{fill:none;stroke:rgba(17,19,24,.1);stroke-width:3}
+.tour-deg #tourRing{stroke:var(--blue);stroke-dasharray:0 100;stroke-linecap:round}
+.tour-caps{position:absolute;left:0;right:0;bottom:clamp(40px,9vh,80px);z-index:2;pointer-events:none}
+.tour-cap{position:absolute;left:0;bottom:0;max-width:380px;padding:16px 20px;border-radius:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(17,19,24,.16);font-size:14.5px;color:var(--ink-2);opacity:0;transform:translateY(16px);transition:opacity .45s,transform .45s var(--ease)}
+.tour-cap b{display:block;font-size:18px;color:var(--ink);margin-bottom:3px}
+.tour-cap.on{opacity:1;transform:none}
+.tour-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);opacity:.7}
+.walk-frame{position:absolute;inset:0;margin:0;will-change:transform,opacity}
+.walk-frame img{width:100%;height:100%;object-fit:cover}
+.walk-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,19,24,.35),rgba(17,19,24,0) 30%,rgba(17,19,24,0) 55%,rgba(17,19,24,.8))}
+.walk-frame figcaption{position:absolute;z-index:1;left:max(24px,calc((100vw - 1240px)/2));right:24px;bottom:clamp(48px,10vh,90px);color:#fff;font-size:16px;max-width:520px}
+.walk-frame figcaption small{display:block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#bcdcf8;margin-bottom:8px}
+.walk-frame figcaption b{display:block;font-size:clamp(30px,4.5vw,56px);letter-spacing:-.035em;line-height:1.05;margin-bottom:6px}
+.walk-head{position:absolute;left:0;right:0;top:clamp(96px,13vh,130px);z-index:2}
+.walk-head .kicker{color:#fff}
+.walk-dots{position:absolute;z-index:2;right:max(24px,calc((100vw - 1240px)/2));top:50%;transform:translateY(-50%);display:grid;gap:10px}
+.walk-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s,transform .3s}
+.walk-dots i.on{background:#fff;transform:scale(1.5)}
 .office-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(200px,22vw,300px);gap:16px}
 .office-grid figure{position:relative;border-radius:22px;overflow:hidden;background:var(--stone);box-shadow:0 24px 50px rgba(17,19,24,.12)}
 .office-grid img{width:100%;height:115%;object-fit:cover;margin-top:-7%;transition:transform 1s var(--ease)}
@@ -335,6 +363,18 @@ form{grid-template-columns:1fr}
 .og-b{grid-row:span 2}
 .office-grid figcaption{font-size:11.5px;padding:7px 11px;left:10px;bottom:10px}
 .office-cta{padding:20px}
+.tour{height:300vh}
+.walk{height:420vh}
+.tour-head{top:92px}
+.tour-deg{width:62px;height:62px;top:auto;bottom:178px;right:16px}
+.tour-deg b{font-size:14px}
+.tour-caps{bottom:96px}
+.tour-cap{max-width:none;right:0;font-size:13.5px;padding:13px 16px}
+.tour-cap b{font-size:16px}
+.tour-hint{display:none}
+.walk-frame figcaption{bottom:100px;font-size:15px}
+.walk-head{top:92px}
+.walk-dots{right:14px}
 .wa{display:none}
 .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:90;padding:8px;border-radius:20px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 14px 40px rgba(17,19,24,.2)}
 .mbar .btn{justify-content:center;padding:14px}
@@ -474,6 +514,24 @@ footer{padding-bottom:110px}
 <a href="tel:+919350974852" class="ph"><i><svg class="i"><use href="#i-phone"/></svg></i><div><small>Call us anytime</small><b>+91 93509 74852</b></div></a>
 </div>
 </div>
+</div>
+</section>
+<!-- 360 TOUR: scroll turns the camera a full circle round the 3D office building -->
+<section class="tour" id="tour">
+<div class="stick">
+<div class="wrap tour-head">
+<span class="kicker">360° tour</span>
+<h2>Walk around <span class="serif">our office</span></h2>
+</div>
+<div class="tour-deg" id="tourDeg" aria-hidden="true"><b>0°</b><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle id="tourRing" cx="22" cy="22" r="19" pathLength="100"/></svg></div>
+<div class="wrap tour-caps">
+<p class="tour-cap" data-from="0" data-to=".14"><b>The front</b>Our entrance on the A-Block plaza, Jindal Global City</p>
+<p class="tour-cap" data-from=".14" data-to=".38"><b>The side wall</b>The big signboard you can see from the road</p>
+<p class="tour-cap" data-from=".38" data-to=".62"><b>From above</b>Four floors, with a terrace on top</p>
+<p class="tour-cap" data-from=".62" data-to=".86"><b>All the way round</b>Easy to spot from every side of the plaza</p>
+<p class="tour-cap" data-from=".86" data-to="1.01"><b>Space for rent</b>Two glass floors at the front are available for rent. Ask us</p>
+</div>
+<div class="tour-hint">Keep scrolling to turn</div>
 </div>
 </section>
 <!-- PROCESS -->
@@ -622,7 +680,7 @@ document.querySelectorAll('#heroTitle .c, .hero-in').forEach(function (e) { e.st
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 const PHONES = '9350974852  9311182344  9910092536';
-function createScene(canvas, { mobile = false } = {}) {
+function createScene(canvas, { mobile = false, tour = false } = {}) {
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mobile, alpha: true, powerPreference: 'high-performance' });
 renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.25 : 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -869,10 +927,21 @@ scene.add(g);
 clouds.push(g);
 }
 const target = new THREE.Vector3(0, 9, -4);
-const state = { progress: 0, intro: 0, px: 0, py: 0, sx: 0, sy: 0 };
+const state = { progress: 0, tourProgress: 0, intro: 0, px: 0, py: 0, sx: 0, sy: 0 };
+let tourMode = tour;
 function place() {
 const p = state.progress, e = 1 - Math.pow(1 - state.intro, 3);
 const aspect = camera.aspect;
+if (tourMode) {
+const tp = state.tourProgress;
+const theta = 0.42 + tp * Math.PI * 2 + state.sx * 0.1;
+const radius = aspect < 0.8 ? 74 : aspect < 1.2 ? 54 : 42;
+const height = 7 + Math.sin(tp * Math.PI) * 12 - state.sy * 2;
+target.set(0, 8.5, -8);
+camera.position.set(target.x + Math.sin(theta) * radius, height, target.z + Math.cos(theta) * radius);
+camera.lookAt(target);
+return;
+}
 const far = aspect < 0.8 ? 1.35 : aspect < 1.2 ? 1.15 : 1;
 const theta = 0.42 + p * 0.85 + state.sx * 0.12 - (1 - e) * 0.9;
 const radius = (42 - p * 10) * far + (1 - e) * 55;
@@ -907,6 +976,8 @@ requestAnimationFrame(frame);
 requestAnimationFrame(frame);
 return {
 setProgress(p) { state.progress = p; },
+setTourProgress(p) { state.tourProgress = p; },
+setMode(isTour) { tourMode = isTour; resize(); },
 setPointer(x, y) { state.px = x; state.py = y; },
 setIntro(v) { state.intro = v; },
 setRunning(v) { running = v; if (v) last = performance.now(); },
@@ -1005,10 +1076,11 @@ const svc = document.querySelector('input[name=svc]:checked').value;
 const text = `Hello Ashoka Properties,\nName: ${v('name')}\nPhone: ${v('phone')}\nInterested in: ${svc}\n${v('msg')}`;
 window.open('https://wa.me/919350974852?text=' + encodeURIComponent(text), '_blank');
 });
-let scene = null, introPlayed = false;
+let scene = null, sceneMod = null, introPlayed = false;
 const wait = ms => new Promise(r => setTimeout(r, ms));
 const sceneReady = new Promise((ok, no) => { if (window.createScene) return ok({ createScene: window.createScene }); addEventListener('scene-lib', () => ok({ createScene: window.createScene }), { once: true }); setTimeout(() => no(new Error('3D library did not load')), 8000); })
 .then(m => {
+sceneMod = m;
 scene = m.createScene($('#scene'), { mobile });
 if (introPlayed) gsap.to({ v: 0 }, { v: 1, duration: 2.4, ease: 'power3.out', onUpdate() { scene.setIntro(this.targets()[0].v); } });
 })
@@ -1039,7 +1111,40 @@ gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: mobile
 .to('#heroCopy', { y: -120, opacity: 0, scale: 0.92, ease: 'none', duration: 0.45 }, 0)
 .to('.hero-foot', { y: 60, opacity: 0, ease: 'none', duration: 0.25 }, 0)
 .to({}, { duration: 0.55 });
-ScrollTrigger.create({ trigger: '.marquee', start: 'top bottom', end: 'top top', onToggle: () => {}, onLeave: () => scene?.setRunning(false), onEnterBack: () => scene?.setRunning(true) });
+const canvas3d = $('#scene'), heroSlot = $('.hero-fallback'), tourSlot = $('#tour .stick');
+const tourCaps = $$('.tour-cap'), tourDeg = $('#tourDeg b'), tourRing = $('#tourRing');
+let inTour = false, heroVisible = true;
+const run3d = () => scene?.setRunning(inTour || heroVisible);
+new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; run3d(); }).observe($('.hero'));
+const showTour = p => {
+tourDeg.textContent = Math.round(p * 360) + '°';
+tourRing.style.strokeDasharray = `${p * 100} 100`;
+tourCaps.forEach(c => c.classList.toggle('on', p >= +c.dataset.from && p < +c.dataset.to));
+scene?.setTourProgress(p);
+};
+const moveTo3d = toTour => {
+if (toTour === inTour) return;
+inTour = toTour;
+if (toTour) tourSlot.prepend(canvas3d); else heroSlot.after(canvas3d);
+scene?.setMode(toTour);
+run3d();
+};
+showTour(0);
+ScrollTrigger.create({ trigger: '#tour', start: 'top bottom', end: 'bottom top', onToggle: s => moveTo3d(s.isActive) });
+ScrollTrigger.create({ trigger: '#tour', start: 'top top', end: 'bottom bottom', scrub: true, onUpdate: s => showTour(s.progress) });
+sceneReady.then(() => { if (inTour) scene?.setMode(true); run3d(); });
+const frames = $$('.walk-frame'), dots = $$('#walkDots i');
+if (frames.length) {
+gsap.set(frames.slice(1), { opacity: 0, scale: 1.25 });
+const walk = gsap.timeline({ scrollTrigger: { trigger: '#walk', start: 'top top', end: 'bottom bottom', scrub: 0.6,
+onUpdate: s => { const i = Math.min(frames.length - 1, Math.round(s.progress * (frames.length - 1))); dots.forEach((d, k) => d.classList.toggle('on', k === i)); } } });
+frames.forEach((f, i) => {
+walk.fromTo(f.querySelector('img'), { scale: 1 }, { scale: 1.12, ease: 'none', duration: 1 }, i);
+if (i < frames.length - 1) walk.to(f, { scale: 1.9, opacity: 0, ease: 'power2.in', duration: 0.6 }, i + 0.4)
+.to(frames[i + 1], { scale: 1, opacity: 1, ease: 'power2.out', duration: 0.6 }, i + 0.4);
+});
+dots[0]?.classList.add('on');
+}
 ScrollTrigger.create({ onUpdate: s => nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 300 && !nav.classList.contains('open')) });
 const mq = gsap.to('#marquee', { xPercent: -50, duration: 28, ease: 'none', repeat: -1 });
 ScrollTrigger.create({ onUpdate: s => {
