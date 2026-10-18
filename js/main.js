@@ -1,5 +1,7 @@
 const { gsap, ScrollTrigger, Lenis } = window;
 gsap.registerPlugin(ScrollTrigger);
+// phones change height as the address bar slides; don't recalculate every animation when that happens
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
@@ -8,9 +10,9 @@ const mobile = matchMedia('(max-width: 640px)').matches;
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 const nav = $('#nav');
 
-// ---------- smooth scroll ----------
+// ---------- smooth scroll (mouse only; phones keep their own native touch scrolling) ----------
 let lenis = null;
-if (!reduce && Lenis) {
+if (!reduce && Lenis && finePointer) {
   lenis = new Lenis({ lerp: 0.09 });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
@@ -98,9 +100,14 @@ $('#form').addEventListener('submit', e => {
 });
 
 // ---------- 3D scene ----------
-let scene = null;
+let scene = null, introPlayed = false;
+const wait = ms => new Promise(r => setTimeout(r, ms));
 const sceneReady = import('./scene.js')
-  .then(m => { scene = m.createScene($('#scene'), { mobile }); })
+  .then(m => {
+    scene = m.createScene($('#scene'), { mobile });
+    // 3D arrived after the intro already ran (slow network): fly the camera in now
+    if (introPlayed) gsap.to({ v: 0 }, { v: 1, duration: 2.4, ease: 'power3.out', onUpdate() { scene.setIntro(this.targets()[0].v); } });
+  })
   .catch(err => { console.warn('3D unavailable, using photo instead', err); document.documentElement.classList.add('no-webgl'); });
 
 if (finePointer) addEventListener('pointermove', e => scene?.setPointer(e.clientX / innerWidth - 0.5, e.clientY / innerHeight - 0.5));
@@ -116,7 +123,9 @@ gsap.to('#loader img', { opacity: 1, scale: 1, rotateY: 0, duration: 1.1, ease: 
 gsap.to('#loader .tag', { opacity: 1, duration: 0.8, delay: 0.5 });
 const counting = gsap.to(count, { v: 90, duration: 1.6, ease: 'power2.out', onUpdate: () => { $('#loadNum').textContent = Math.round(count.v); gsap.set('#loadBar', { scaleX: count.v / 100 }); } });
 
-Promise.all([sceneReady, document.fonts?.ready, new Promise(r => setTimeout(r, reduce ? 0 : 1300))]).then(() => {
+// never hold the loading screen for long: on slow mobile data the 3D keeps loading behind the page
+Promise.all([Promise.race([sceneReady, wait(mobile ? 2500 : 4500)]), Promise.race([document.fonts?.ready, wait(1500)]), wait(reduce ? 0 : 1300)]).then(() => {
+  introPlayed = true;
   const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
   tl.to(count, { v: 100, duration: 0.4, ease: 'power1.out', onUpdate: () => { $('#loadNum').textContent = Math.round(count.v); gsap.set('#loadBar', { scaleX: count.v / 100 }); } }, counting.isActive() ? '+=0' : 0)
     .to('#loader .mid', { y: -40, opacity: 0, duration: 0.6, ease: 'power2.in' })
@@ -130,7 +139,8 @@ Promise.all([sceneReady, document.fonts?.ready, new Promise(r => setTimeout(r, r
 if (!reduce) {
   // ---------- hero: pinned, scroll orbits the camera around the villa ----------
   // one timeline on the pin, so the headline fades while the camera orbits (duration 1 = whole pin)
-  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=120%', pin: true, scrub: true, onUpdate: s => scene?.setProgress(s.progress) } })
+  // phones don't pin the hero (pinning fights touch scrolling); the camera still orbits as the hero scrolls away
+  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: mobile ? 'bottom top' : '+=120%', pin: !mobile, scrub: mobile ? 0.5 : true, onUpdate: s => scene?.setProgress(s.progress) } })
     .to('#heroCopy', { y: -120, opacity: 0, scale: 0.92, ease: 'none', duration: 0.45 }, 0)
     .to('.hero-foot', { y: 60, opacity: 0, ease: 'none', duration: 0.25 }, 0)
     .to({}, { duration: 0.55 });
