@@ -2,6 +2,9 @@ const { gsap, ScrollTrigger, Lenis } = window;
 gsap.registerPlugin(ScrollTrigger);
 // phones change height as the address bar slides; don't recalculate every animation when that happens
 ScrollTrigger.config({ ignoreMobileResize: true });
+// run animations on real time: on slow phones the 3D makes frames slow, and GSAP's lag smoothing would otherwise
+// stretch the intro so much that the hero headline never finishes appearing
+gsap.ticker.lagSmoothing(0);
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
@@ -16,7 +19,6 @@ if (!reduce && Lenis && finePointer) {
   lenis = new Lenis({ lerp: 0.09 });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
-  gsap.ticker.lagSmoothing(0);
   lenis.stop();
 }
 const scrollToEl = el => lenis ? lenis.scrollTo(el, { offset: -10, duration: 1.6 }) : el.scrollIntoView({ behavior: 'smooth' });
@@ -102,7 +104,7 @@ $('#form').addEventListener('submit', e => {
 // ---------- 3D scene ----------
 let scene = null, introPlayed = false;
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const sceneReady = import('./scene.js')
+const sceneReady = import('./scene.js?v=7')
   .then(m => {
     scene = m.createScene($('#scene'), { mobile });
     // 3D arrived after the intro already ran (slow network): fly the camera in now
@@ -134,6 +136,8 @@ Promise.all([Promise.race([sceneReady, wait(mobile ? 2500 : 4500)]), Promise.rac
     .to({ v: 0 }, { v: 1, duration: reduce ? 0.01 : 2.8, ease: 'power3.out', onUpdate() { scene?.setIntro(this.targets()[0].v); } }, '<-0.6')
     .to(heroChars, { yPercent: 0, rotateX: 0, opacity: 1, duration: 1.4, stagger: 0.035 }, '<0.3')
     .to('.hero-in', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '<0.4');
+  // however slow the device, the headline and buttons are fully shown within 6 seconds
+  setTimeout(() => { if (tl.progress() < 1) tl.progress(1); }, 6000);
 });
 
 if (!reduce) {

@@ -85,9 +85,10 @@ body.has-cursor .cursor,body.has-cursor .cursor-ring{opacity:1}
 .burger span{display:block;width:18px;height:2px;background:#fff;margin:4px auto;transition:.3s}
 .hero{height:100vh;height:100svh;min-height:640px;overflow:hidden;background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 42%,var(--sky-3) 78%,#e9f1f8 100%)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero-fallback{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80&auto=format&fit=crop) center/cover;display:none}
-.no-webgl .hero-fallback{display:block}
-.no-webgl .hero-fallback::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.1) 60%)}
+.hero-fallback{position:absolute;inset:0;background:url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80&auto=format&fit=crop) center 70%/cover;transition:opacity 1.2s ease}
+.hero-fallback::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.35) 55%,rgba(255,255,255,0) 80%)}
+.scene-on .hero-fallback{opacity:0}
+.no-webgl .hero-fallback{opacity:1}
 .hero-copy{position:relative;z-index:3;text-align:center;padding-top:clamp(118px,15vh,160px);pointer-events:none}
 .hero-copy > *{pointer-events:auto}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);font-size:13px;font-weight:600;color:var(--ink-2)}
@@ -598,6 +599,7 @@ if (!document.body.classList.contains('loading')) return;
 document.body.classList.remove('loading');
 var l = document.getElementById('loader'); if (l) l.style.display = 'none';
 document.documentElement.classList.add('no-webgl');
+document.querySelectorAll('#heroTitle .c, .hero-in').forEach(function (e) { e.style.opacity = 1; e.style.transform = 'none'; });
 }, 7000);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -607,8 +609,8 @@ document.documentElement.classList.add('no-webgl');
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 function createScene(canvas, { mobile = false } = {}) {
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 2));
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mobile, alpha: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.25 : 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.05;
@@ -751,7 +753,7 @@ camera.updateProjectionMatrix();
 }
 addEventListener('resize', resize);
 resize();
-let running = true, last = performance.now();
+let running = true, last = performance.now(), frames = 0;
 function frame(now) {
 const dt = Math.min((now - last) / 1000, 0.05); last = now;
 if (running) {
@@ -763,6 +765,7 @@ M.water.emissiveIntensity = 0.22 + Math.sin(now / 600) * 0.06;
 glow.intensity = 26 + Math.sin(now / 900) * 4;
 place();
 renderer.render(scene, camera);
+if (++frames === 3) document.documentElement.classList.add('scene-on');
 }
 requestAnimationFrame(frame);
 }
@@ -782,6 +785,7 @@ window.dispatchEvent(new Event('scene-lib'));
 const { gsap, ScrollTrigger, Lenis } = window;
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
+gsap.ticker.lagSmoothing(0);
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -793,7 +797,6 @@ if (!reduce && Lenis && finePointer) {
 lenis = new Lenis({ lerp: 0.09 });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(t => lenis.raf(t * 1000));
-gsap.ticker.lagSmoothing(0);
 lenis.stop();
 }
 const scrollToEl = el => lenis ? lenis.scrollTo(el, { offset: -10, duration: 1.6 }) : el.scrollIntoView({ behavior: 'smooth' });
@@ -894,6 +897,7 @@ tl.to(count, { v: 100, duration: 0.4, ease: 'power1.out', onUpdate: () => { $('#
 .to({ v: 0 }, { v: 1, duration: reduce ? 0.01 : 2.8, ease: 'power3.out', onUpdate() { scene?.setIntro(this.targets()[0].v); } }, '<-0.6')
 .to(heroChars, { yPercent: 0, rotateX: 0, opacity: 1, duration: 1.4, stagger: 0.035 }, '<0.3')
 .to('.hero-in', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '<0.4');
+setTimeout(() => { if (tl.progress() < 1) tl.progress(1); }, 6000);
 });
 if (!reduce) {
 gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: mobile ? 'bottom top' : '+=120%', pin: !mobile, scrub: mobile ? 0.5 : true, onUpdate: s => scene?.setProgress(s.progress) } })

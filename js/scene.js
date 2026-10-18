@@ -3,8 +3,9 @@ import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 export function createScene(canvas, { mobile = false } = {}) {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 2));
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !mobile, alpha: true, powerPreference: 'high-performance' });
+  // phones render fewer pixels so the 3D stays smooth and leaves room for the page's own animations
+  renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.25 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
@@ -178,7 +179,7 @@ export function createScene(canvas, { mobile = false } = {}) {
   addEventListener('resize', resize);
   resize();
 
-  let running = true, last = performance.now();
+  let running = true, last = performance.now(), frames = 0;
   function frame(now) {
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
     if (running) {
@@ -190,6 +191,8 @@ export function createScene(canvas, { mobile = false } = {}) {
       glow.intensity = 26 + Math.sin(now / 900) * 4;
       place();
       renderer.render(scene, camera);
+      // a few real frames drawn: the 3D works on this device, so hide the backup photo
+      if (++frames === 3) document.documentElement.classList.add('scene-on');
     }
     requestAnimationFrame(frame);
   }
