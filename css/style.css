@@ -8,7 +8,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* 3D transforms stick out past the screen edge before they animate in; clip them so phones never see a wider page and zoom out */
+html{overflow-x:hidden;overflow-x:clip}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+main,footer,section{max-width:100%;overflow-x:clip}
 body.loading{overflow:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
